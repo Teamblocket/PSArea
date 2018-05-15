@@ -59,6 +59,6 @@
             }
             $a->setOwner($pl);
             $sender->sendMessage(PSAreaMain::get("owner-changed"));
-            $pl->sendMessage(PSAreaMain::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()]));
+            $pl->sendMessage(PSAreaMain::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()], ["@type", "field"]));
         }
     }

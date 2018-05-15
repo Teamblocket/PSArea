@@ -111,7 +111,7 @@ commands-protectworld-set-aliases: ["level", "isProtect"]
 
 #Message
 # @type is Land Type(Island, Field, Skyland, Land)
-message-only-player: "Only Player Can see this"
+message-only-player: "Only Player Can see(or buy) this"
 message-not-registered: "Not Registered"
 message-not-yours: "It's not your @type"
 message-doesnt-exist: "Doesn't exist"

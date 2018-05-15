@@ -1,0 +1,143 @@
+Prefix: "[ PSArea ]"
+# Commands
+commands-field-addshare-name: "평야공유"
+commands-field-addshare-description: "자신의 평야를 공유(플레이어)해주는 커맨드"
+commands-field-addshare-usage: "/평야공유 [이름] [id]"
+commands-field-addshare-aliases: ["Player", "Id"]
+commands-field-buy-name: "평야구매"
+commands-field-buy-description: "평야 구매 명령어"
+commands-field-buy-usage: "/평야구매 [id]"
+commands-field-buy-aliases: ["Id"]
+commands-field-delshare-name: "평야공유제거"
+commands-field-delshare-description: "자신의 평야에서 공유된 플레이어 를 제거해주는 커맨드"
+commands-field-delshare-usage: "/평야공유 [플레이어] [id]"
+commands-field-delshare-aliases: ["Player", "Id"]
+commands-field-give-name: "평야주기"
+commands-field-give-description: "원하는 플레이어에게 평야를 줍니다."
+commands-field-give-usage: "/평야주기 [플레이어] [id]"
+commands-field-give-aliases: ["Player", "Id"]
+commands-field-info-name: "평야정보"
+commands-field-info-description: "다른 평야 또는 자신의 평야의 정보 커맨드"
+commands-field-info-usage: "/평야정보 [id]"
+commands-field-info-aliases: ["Id"]
+commands-field-make-name: "평야목록"
+commands-field-make-description: "자신의 구매한 평야 번호를 보는 커맨드"
+commands-field-make-usage: "/평야목록"
+commands-field-make-aliases: []
+commands-field-warp-name: "평야이동"
+commands-field-warp-description: "원하는 평야로 이동하는 커맨드"
+commands-field-warp-usage: "/평야이동 [id]"
+commands-field-warp-aliases: ["Id"]
+commands-island-addshare-name: "섬공유"
+commands-island-addshare-description: "자신의 섬를 공유(플레이어)해주는 커맨드"
+commands-island-addshare-usage: "/섬공유 [이름] [id]"
+commands-island-addshare-aliases: ["Player", "Id"]
+commands-island-buy-name: "섬구매"
+commands-island-buy-description: "섬 구매 명령어"
+commands-island-buy-usage: "/섬구매 [id]"
+commands-island-buy-aliases: ["Id"]
+commands-island-delshare-name: "섬공유제거"
+commands-island-delshare-description: "자신의 섬에서 공유된 플레이어 를 제거해주는 커맨드"
+commands-island-delshare-usage: "/섬공유 [플레이어] [id]"
+commands-island-delshare-aliases: ["Player", "Id"]
+commands-island-give-name: "섬주기"
+commands-island-give-description: "원하는 플레이어에게 섬를 줍니다."
+commands-island-give-usage: "/섬주기 [플레이어] [id]"
+commands-island-give-aliases: ["Player", "Id"]
+commands-island-info-name: "섬정보"
+commands-island-info-description: "다른 섬 또는 자신의 섬의 정보 커맨드"
+commands-island-info-usage: "/섬정보 [id]"
+commands-island-info-aliases: ["Id"]
+commands-island-make-aliases: []
+commands-island-warp-name: "섬이동"
+commands-island-warp-description: "원하는 섬로 이동하는 커맨드"
+commands-island-warp-usage: "/섬이동 [id]"
+commands-island-warp-aliases: ["Id"]
+commands-land-addshare-name: "영역공유"
+commands-land-addshare-description: "자신의 영역를 공유(플레이어)해주는 커맨드"
+commands-land-addshare-usage: "/영역공유 [이름] [id]"
+commands-land-addshare-aliases: ["Player", "Id"]
+commands-land-buy-name: "영역구매"
+commands-land-buy-description: "영역 구매 명령어"
+commands-land-buy-usage: "/영역구매 [id]"
+commands-land-buy-aliases: ["Id"]
+commands-land-delshare-name: "영역공유제거"
+commands-land-delshare-description: "자신의 영역에서 공유된 플레이어 를 제거해주는 커맨드"
+commands-land-delshare-usage: "/영역공유 [플레이어] [id]"
+commands-land-delshare-aliases: ["Player", "Id"]
+commands-land-give-name: "영역주기"
+commands-land-give-description: "원하는 플레이어에게 영역를 줍니다."
+commands-land-give-usage: "/영역주기 [플레이어] [id]"
+commands-land-give-aliases: ["Player", "Id"]
+commands-land-info-name: "영역정보"
+commands-land-info-description: "다른 영역 또는 자신의 영역의 정보 커맨드"
+commands-land-info-usage: "/영역정보 [id]"
+commands-land-info-aliases: ["Id"]
+commands-land-make-name: "영역생성"
+commands-land-make-description: "영역을 생성하는 커맨드"
+commands-land-make-usage: "/영역생성"
+commands-land-make-aliases: []
+commands-land-warp-name: "영역이동"
+commands-land-warp-description: "원하는 영역로 이동하는 커맨드"
+commands-land-warp-usage: "/영역이동 [id]"
+commands-land-warp-aliases: ["Id"]
+commands-skyland-addshare-name: "하늘섬공유"
+commands-skyland-addshare-description: "자신의 하늘섬를 공유(플레이어)해주는 커맨드"
+commands-skyland-addshare-usage: "/하늘섬공유 [이름] [id]"
+commands-skyland-addshare-aliases: ["Player", "Id"]
+commands-skyland-buy-name: "하늘섬구매"
+commands-skyland-buy-description: "하늘섬 구매 명령어"
+commands-skyland-buy-usage: "/하늘섬구매 [id]"
+commands-skyland-buy-aliases: ["Id"]
+commands-skyland-delshare-name: "하늘섬공유제거"
+commands-skyland-delshare-description: "자신의 하늘섬에서 공유된 플레이어 를 제거해주는 커맨드"
+commands-skyland-delshare-usage: "/하늘섬공유 [플레이어] [id]"
+commands-skyland-delshare-aliases: ["Player", "Id"]
+commands-skyland-give-name: "하늘섬주기"
+commands-skyland-give-description: "원하는 플레이어에게 하늘섬를 줍니다."
+commands-skyland-give-usage: "/하늘섬주기 [플레이어] [id]"
+commands-skyland-give-aliases: ["Player", "Id"]
+commands-skyland-info-name: "하늘섬정보"
+commands-skyland-info-description: "다른 하늘섬 또는 자신의 하늘섬의 정보 커맨드"
+commands-skyland-info-usage: "/하늘섬정보 [id]"
+commands-skyland-info-aliases: ["Id"]
+commands-skyland-warp-name: "하늘섬이동"
+commands-skyland-warp-description: "원하는 하늘섬로 이동하는 커맨드"
+commands-skyland-warp-usage: "/하늘섬이동 [id]"
+commands-skyland-warp-aliases: ["Id"]
+commands-protectworld-set-name: "setprotectworld"
+commands-protectworld-set-description: "Set protected world"
+commands-protectworld-set-usage: "/setprotectworld [level] [isProtect(default: true)]"
+commands-protectworld-set-aliases: ["level", "isProtect"]
+
+#Message
+# @type is Land Type(Island, Field, Skyland, Land)
+message-only-player: "인게임에서만 가능합니다."
+message-not-registered: "등록이 안되었습니다"
+message-not-yours: "당신의 @type 이(가) 아닙니다"
+message-doesnt-exist: "존재하지 않습니다"
+message-you-add-share: "당신은 @player 를 @landnum @type 에 추가하셨습니다"
+message-owner-exist: "주인이 이미 등록되었습니다"
+message-you-have-max: "당신은 @type 이(가) 이미 있습니다."
+message-you-need-money: "@money가 필요합니다"
+message-cancelled: "플러그인에 의해 취소되었습니다"
+message-you-bought: "구매완료 @landnum @type"
+message-your-money-now: "당신의 현재 돈 : @money"
+message-you-del-share: "당신은 @player 를 @landnum @type 에 제거하셨습니다"
+message-target-have-max: "땅을 더이상 구매가 불가능합니다.(최대)"
+message-owner-changed: "주인이 바뀌었습니다"
+message-you-got: "당신은 @landnum @type 을 @player 로 부터 받으셨습니다."
+message-info-start: "===[@landnum @type]===="
+message-owner: "주인 : @owner"
+message-shares: "공유자 :"
+message-none: "None"
+message-field-list: "[평야 목록]"
+message-warp-to: "@landnum @type 로 워프 되셨습니다"
+message-land-cant-make-at: "당신은 땅을 @level 레벨에 만드실 수 없습니다."
+message-land-start-making: "@landnum 땅을 만들기 시작했습니다"
+message-touch-2: "2곳을 터지해주세요"
+message-no-permission: "퍼미션 없음"
+message-cant-find-level: "레벨을 찾을 수 없습니다."
+message-world-will-be-protected: "@level 레벨이 이제부터 보호될 것 입니다"
+message-registered-first-vector2: "첫 좌표 등록 완료"
+message-registered-all: "등록완료"

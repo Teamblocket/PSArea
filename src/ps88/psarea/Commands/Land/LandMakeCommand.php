@@ -38,17 +38,17 @@
          */
         public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
             if (!$sender instanceof Player) {
-                $sender->sendMessage("Only Player Can Buy this.");
+                $sender->sendMessage(PSAreaMain::get("only-player"));
                 return \true;
             }
             if ($sender->getLevel()->getName() == "land" or $sender->getLevel()->getName() == "skyland" or $sender->getLevel()->getName() == "field") {
-                $sender->sendMessage("You can't make Land at {$sender->getLevel()->getName()} Level");
+                $sender->sendMessage(PSAreaMain::get("land-cant-make-at", \true, ["@level", $sender->getLevel()->getName()]));
                 return \true;
             }
             $idd = LandLoader::$landcount;
-            $sender->sendMessage("Start making {$idd} land");
+            $sender->sendMessage(PSAreaMain::get("land-start-making", \true, ["@landnum", $idd]));
             $this->owner->landloader->startRegister($sender, LandLoader::$landcount++, $sender->getLevel());
-            $sender->sendMessage("Pls touch 2 points");
+            $sender->sendMessage(PSAreaMain::get("touch-2"));
             return \true;
         }
     }

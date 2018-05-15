@@ -102,10 +102,11 @@
             $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
                     "lang" => "eng"
             ]);
-            if(!file_exists($this->getDataFolder()."lang.yml")) {
-                file_put_contents($this->getDataFolder() . "lang.yml", stream_get_contents($this->getResource("lang.yml")));
+            $lang = $this->setting->get("lang");
+            if(!file_exists($this->getDataFolder()."lang_{$lang}.yml")) {
+                file_put_contents($this->getDataFolder() . "lang.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
             }
-            self::$langcf = new Config($this->getDataFolder(). "lang.yml", Config::YAML);
+            self::$langcf = new Config($this->getDataFolder(). "lang_{$lang}.yml", Config::YAML);
             $this->loadLevels();
             $this->registerCommands();
             if ($this->getServer()->getPluginManager()->getPlugin('StormCore') !== \null) {
@@ -119,6 +120,8 @@
         }
 
         public function onDisable() {
+            $this->setting->save();
+            self::$langcf->save();
             $this->islandloader->saveAll();
             $this->skylandloader->saveAll();
             $this->fieldloader->saveAll();
