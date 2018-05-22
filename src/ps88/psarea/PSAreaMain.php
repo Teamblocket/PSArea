@@ -105,7 +105,7 @@
             ]);
             $lang = $this->setting->get("lang");
             if(!file_exists($this->getDataFolder()."lang_{$lang}.yml")) {
-                file_put_contents($this->getDataFolder() . "lang.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
+                file_put_contents($this->getDataFolder() . "lang_{$lang}.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
             }
             self::$langcf = new Config($this->getDataFolder(). "lang_{$lang}.yml", Config::YAML);
             if(! $this->setting->get("needidargs")){
