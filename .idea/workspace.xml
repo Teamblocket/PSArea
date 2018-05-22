@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e2ee3e-cb7a-4137-b6c8-680220623133" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang_kor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang_kor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Tasks/FieldAutoAddTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Tasks/FieldAutoAddTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SkylandBuyCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SkylandBuyCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
               <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plugin.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -208,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandAddShareCommand.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandDelShareCommand.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandAddShareCommand.php" />
-        <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/resources/a" />
         <option value="$PROJECT_DIR$/resources/lang.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Field/FieldGiveCommand.php" />
@@ -223,6 +226,7 @@
         <option value="$PROJECT_DIR$/resources/lang_kor.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" />
+        <option value="$PROJECT_DIR$/plugin.yml" />
       </list>
     </option>
   </component>
@@ -419,12 +423,12 @@
       <workItem from="1526567969898" duration="23000" />
       <workItem from="1526634132114" duration="427000" />
       <workItem from="1526719986423" duration="44000" />
-      <workItem from="1526991965806" duration="1219000" />
+      <workItem from="1526991965806" duration="1366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73218000" />
+    <option name="totallyTimeSpent" value="73365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -663,13 +667,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/a" />
-    <entry file="file://$PROJECT_DIR$/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/ProtectWorld/setProtectWorldCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -781,6 +778,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
