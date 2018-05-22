@@ -1,7 +1,6 @@
 <?php
     namespace ps88\psarea\Generator;
 
-    use pocketmine\level\biome\Biome;
     use ps88\psarea\Object\Sphere;
     use pocketmine\math\Vector3;
     use pocketmine\level\ChunkManager;
@@ -81,8 +80,6 @@
                     TallGrass::growGrass($this->level, new Vector3($x, $y, $z), $this->random);
                 }
             }
-            $biome = Biome::getBiome(Biome::OCEAN);
-            $biome->populateChunk($this->level, $chunkX, $chunkZ, $this->random);
         }
 
         public function getSpawn(): Vector3 {

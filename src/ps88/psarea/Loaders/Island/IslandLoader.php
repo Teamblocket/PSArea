@@ -89,6 +89,7 @@
         public function loadLevel(): void {
             Generator::addGenerator(IslandGenerator::class, 'island');
             $g = Generator::getGenerator("island");
+            var_dump($g);
             if (!Server::getInstance()->loadLevel("island")) {
                 @mkdir(Server::getInstance()->getDataPath() . "/" . "worlds" . "/" . "island");
                 Server::getInstance()->generateLevel("island", \null, $g, []);

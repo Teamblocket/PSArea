@@ -97,8 +97,9 @@
         }
 
         public function loadLevel(): void {
-            Generator::addGenerator(FieldGenerator::class, 'field');
+            Generator::addGenerator(FieldGenerator::class, "field");
             $g = Generator::getGenerator("field");
+            var_dump($g);
             if (!Server::getInstance()->loadLevel("field")) {
                 @mkdir(Server::getInstance()->getDataPath() . "/" . "worlds" . "/" . "field");
                 Server::getInstance()->generateLevel("field", \null, $g, []);

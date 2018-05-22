@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e2ee3e-cb7a-4137-b6c8-680220623133" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Generator/SkylandGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Generator/SkylandGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,34 +28,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PSAreaMain.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PSAreaMain.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="96" column="20" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="20" />
+            <state relative-caret-position="1218">
+              <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IslandBuyCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php">
+      <file leaf-file-name="FieldGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="50" column="13" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="50" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+              <folding>
+                <element signature="e#143#184#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SkylandBuyCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
@@ -58,38 +58,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FieldLoader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+              <folding>
+                <element signature="e#52#93#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IslandLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldAutoAddTask.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Tasks/FieldAutoAddTask.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
-              <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lang_kor.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang_kor.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandMakeCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandMakeCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="532">
+              <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+              <folding>
+                <element signature="e#53#94#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,18 +164,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Land/LandLoader.php" />
-        <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Land/LandArea.php" />
-        <option value="$PROJECT_DIR$/src/ps88/psarea/ProtectWorld/ProtectWorldListener.php" />
-        <option value="$PROJECT_DIR$/src/ps88/psarea/Tasks/AreaAddTask.php" />
-        <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldListener.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/base/BaseLoader.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/base/BaseArea.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Field/DelShareCommand.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Skyland/SkylandArea.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandArea.php" />
-        <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldArea.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/MultiLanguage/MultiLanguageManager.php" />
         <option value="$PROJECT_DIR$/resources/lang.ini" />
@@ -225,8 +207,14 @@
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" />
         <option value="$PROJECT_DIR$/resources/lang_kor.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" />
-        <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/SkylandGenerator.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/FieldsGenerator.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" />
+        <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" />
+        <option value="$PROJECT_DIR$/plugin.yml" />
       </list>
     </option>
   </component>
@@ -296,25 +284,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ps88" type="462c0819:PsiDirectoryNode" />
               <item name="psarea" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSArea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSArea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ps88" type="462c0819:PsiDirectoryNode" />
-              <item name="psarea" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-              <item name="Island" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSArea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSArea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ps88" type="462c0819:PsiDirectoryNode" />
-              <item name="psarea" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-              <item name="Skyland" type="462c0819:PsiDirectoryNode" />
+              <item name="Generator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PSArea" type="b2602c69:ProjectViewProjectNode" />
@@ -323,23 +293,6 @@
               <item name="ps88" type="462c0819:PsiDirectoryNode" />
               <item name="psarea" type="462c0819:PsiDirectoryNode" />
               <item name="Loaders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSArea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSArea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ps88" type="462c0819:PsiDirectoryNode" />
-              <item name="psarea" type="462c0819:PsiDirectoryNode" />
-              <item name="Loaders" type="462c0819:PsiDirectoryNode" />
-              <item name="Island" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSArea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSArea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ps88" type="462c0819:PsiDirectoryNode" />
-              <item name="psarea" type="462c0819:PsiDirectoryNode" />
-              <item name="Tasks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -423,12 +376,12 @@
       <workItem from="1526567969898" duration="23000" />
       <workItem from="1526634132114" duration="427000" />
       <workItem from="1526719986423" duration="44000" />
-      <workItem from="1526991965806" duration="1682000" />
+      <workItem from="1526991965806" duration="4119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73681000" />
+    <option name="totallyTimeSpent" value="76118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -467,14 +420,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Field/DelShareCommand.php" />
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/base/BaseArea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1634">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Object/Sphere.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -486,13 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -511,13 +449,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldListener.php" />
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldArea.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -739,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang_kor.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -767,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang_eng.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -781,10 +698,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/SkylandGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+          <folding>
+            <element signature="e#48#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#53#94#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding>
+            <element signature="e#143#184#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="96" column="20" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="20" />
+        <state relative-caret-position="1218">
+          <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+          <folding>
+            <element signature="e#52#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
