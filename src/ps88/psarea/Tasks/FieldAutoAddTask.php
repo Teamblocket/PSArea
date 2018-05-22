@@ -13,6 +13,10 @@
         /** @var PSAreaMain */
         protected $owner;
 
+        private $x = \null;
+
+        private $z = \null;
+
         public function __construct(PSAreaMain $owner) {
             parent::__construct($owner);
         }
@@ -26,22 +30,44 @@
          */
         public function onRun(int $currentTick) {
             $xz = 7 + FieldLoader::$diagonalcount * 37;
-            $x = $xz;
-            $z = $xz;
-            while(\true) {
-                $this->addArea($x, $xz);
-                $x = $x - 37;
-                if($x <= 7) break;
+            $x = $this->x ?? $xz;
+            $z = $this->z ?? $xz;
+            $i = 0;
+            if($x > 7) {
+                while (\true) {
+                    $this->addArea($x, $xz);
+                    $x = $x - 37;
+                    $i++;
+                    if($i % 20 == 0){
+                        $this->x = $x;
+                        $this->z = $z;
+                        $this->i = $i;
+                        return;
+                    }
+                    if ($x <= 7) break;
+                }
             }
-            while(\true) {
-                $this->addArea($xz, $z);
-                $z = $z - 37;
-                if($z <= 7) break;
+            if($z > 7) {
+                while (\true) {
+                    $this->addArea($xz, $z);
+                    $z = $z - 37;
+                    $i++;
+                    if($i % 20 == 0){
+                        $this->x = $x;
+                        $this->z = $z;
+                        $this->i = $i;
+                        return;
+                    }
+                    if ($z <= 7) break;
+                }
             }
             FieldLoader::$diagonalcount++;
             if((FieldLoader::$diagonalcount % 30) == 0){
                 $this->getHandler()->setNextRun(FieldLoader::$diagonalcount / 20 );
             }
+            $this->x = \null;
+            $this->z = \null;
+            $this->i = 0;
         }
 
         public function addArea($x, $z) {

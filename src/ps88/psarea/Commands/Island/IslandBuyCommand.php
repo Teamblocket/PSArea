@@ -41,9 +41,13 @@
                 $sender->sendMessage(PSAreaMain::get("only-player"));
                 return \true;
             }
-            if (!isset($args[0])) {
+            if (!isset($args[0]) and $this->owner->setting->get("needidargs")) {
                 $sender->sendMessage($this->getUsage());
                 return \true;
+            }
+            $args[0] = (! $this->owner->setting->get("needidargs"))? IslandLoader::$landcount++ : $args[0];
+            if(! isset($args[0])){
+                $sender->sendMessage($this->getUsage());
             }
             if (($a = $this->owner->islandloader->getAreaById($args[0])) == \null) {
                 $sender->sendMessage(PSAreaMain::get("doesnt-exist"));

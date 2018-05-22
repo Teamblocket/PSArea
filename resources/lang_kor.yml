@@ -29,7 +29,7 @@ commands-field-warp-description: "원하는 평야로 이동하는 커맨드"
 commands-field-warp-usage: "/평야이동 [id]"
 commands-field-warp-aliases: ["Id"]
 commands-island-addshare-name: "섬공유"
-commands-island-addshare-description: "자신의 섬를 공유(플레이어)해주는 커맨드"
+commands-island-addshare-description: "자신의 섬을 공유(플레이어)해주는 커맨드"
 commands-island-addshare-usage: "/섬공유 [이름] [id]"
 commands-island-addshare-aliases: ["Player", "Id"]
 commands-island-buy-name: "섬구매"
@@ -41,7 +41,7 @@ commands-island-delshare-description: "자신의 섬에서 공유된 플레이�
 commands-island-delshare-usage: "/섬공유 [플레이어] [id]"
 commands-island-delshare-aliases: ["Player", "Id"]
 commands-island-give-name: "섬주기"
-commands-island-give-description: "원하는 플레이어에게 섬를 줍니다."
+commands-island-give-description: "원하는 플레이어에게 섬을 줍니다."
 commands-island-give-usage: "/섬주기 [플레이어] [id]"
 commands-island-give-aliases: ["Player", "Id"]
 commands-island-info-name: "섬정보"
@@ -82,7 +82,7 @@ commands-land-warp-description: "원하는 영역로 이동하는 커맨드"
 commands-land-warp-usage: "/영역이동 [id]"
 commands-land-warp-aliases: ["Id"]
 commands-skyland-addshare-name: "하늘섬공유"
-commands-skyland-addshare-description: "자신의 하늘섬를 공유(플레이어)해주는 커맨드"
+commands-skyland-addshare-description: "자신의 하늘섬을 공유(플레이어)해주는 커맨드"
 commands-skyland-addshare-usage: "/하늘섬공유 [이름] [id]"
 commands-skyland-addshare-aliases: ["Player", "Id"]
 commands-skyland-buy-name: "하늘섬구매"
@@ -94,7 +94,7 @@ commands-skyland-delshare-description: "자신의 하늘섬에서 공유된 플�
 commands-skyland-delshare-usage: "/하늘섬공유 [플레이어] [id]"
 commands-skyland-delshare-aliases: ["Player", "Id"]
 commands-skyland-give-name: "하늘섬주기"
-commands-skyland-give-description: "원하는 플레이어에게 하늘섬를 줍니다."
+commands-skyland-give-description: "원하는 플레이어에게 하늘섬을 줍니다."
 commands-skyland-give-usage: "/하늘섬주기 [플레이어] [id]"
 commands-skyland-give-aliases: ["Player", "Id"]
 commands-skyland-info-name: "하늘섬정보"

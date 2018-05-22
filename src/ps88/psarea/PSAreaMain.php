@@ -100,13 +100,20 @@
             $this->getServer()->getScheduler()->scheduleRepeatingTask(new FieldAutoAddTask($this), 20);
             @mkdir($this->getDataFolder());
             $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
-                    "lang" => "eng"
+                    "lang" => "eng",
+                "needidargs" => \false
             ]);
             $lang = $this->setting->get("lang");
             if(!file_exists($this->getDataFolder()."lang_{$lang}.yml")) {
                 file_put_contents($this->getDataFolder() . "lang.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
             }
             self::$langcf = new Config($this->getDataFolder(). "lang_{$lang}.yml", Config::YAML);
+            if(! $this->setting->get("needidargs")){
+                self::$langcf->set("skyland-buy-usage", explode(" ", self::getCommands("skyland-buy-usage"))[0]);
+                self::$langcf->set("skyland-buy-aliases", []);
+                self::$langcf->set("island-buy-usage", explode(" ", self::getCommands("island-buy-usage"))[0]);
+                self::$langcf->set("island-buy-aliases", []);
+            }
             $this->loadLevels();
             $this->registerCommands();
             if ($this->getServer()->getPluginManager()->getPlugin('StormCore') !== \null) {
