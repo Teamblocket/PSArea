@@ -1,51 +1,51 @@
 # PSArea
+[![](https://poggit.pmmp.io/shield.state/PSArea)](https://poggit.pmmp.io/p/PSArea)
+
+[![](https://poggit.pmmp.io/shield.api/PSArea)](https://poggit.pmmp.io/p/PSArea)
 >> ## English
 
 ### Instruction
-This is Land/Island/Skyland Manager.
+This is Land/Island/Skyland/Field Manager.
 You can use it free. Plus, you can use PSArea API.
 
 ### Commands
 
-#### For island
-+ /warpisland [id]- warp to [id] island
-+ /infoisland [id(or now Island)] - get info about [id] island
-+ /buyisland [id] - buy [id] island
-+ /addislandshare [player] [id(or now Island)] - add share player at [id] island
-+ /giveisland [player] [id(or now island)] - GIve [id] island to [player]
+####Field Command
+>  | Command | Description | Permission | Aliases |
+>  | :-------: | :-------: | :-------: | :-------: |
+>  | /addfieldshare | Add Field Shared Player | Area Owner | [Player] [id] |
+>  | /buyfield | Buy Field | default | [id(or don't need to)] |
+>  | /delfieldshare | Delete Field Shared Player | Area Owner | [Player] [id] |
+>  | /givefield | Give Field to other Player | Area Owner | [Player] [id] |
+>  | /infofield | Get Field Info | Default | [id] |
+>  | /warpfield | Warp to field | Default | [id] |
 
-#### For skyland
-+ /warpskyland [id] - warp to [id] skyland
-+ /infoskyland [id(or now Island)] - get info about [id] skyland
-+ /buyskyland [id] - buy [id] skyland
-+ /addskylandshare [player] [id(or now Island)] - add share player at [id] skyland
-+ /giveskyland [player] [id(or now island)] - give [id] skyland to [player]
+####Island Command
+>  | Command | Description | Permission | Aliases |
+>  | :-------: | :-------: | :-------: | :-------: |
+>  | /addislandshare | Add Island Shared Player | Area Owner | [Player] [id] |
+>  | /buyisland | Buy Island | default | [id(or don't need to)] |
+>  | /delislandshare | Delete Island Shared Player | Area Owner | [Player] [id] |
+>  | /giveisland | Give Island to other Player | Area Owner | [Player] [id] |
+>  | /infoisland | Get Island Info | Default | [id] |
+>  | /warpisland | Warp to Island | Default | [id] |
 
-### Todo
-+ Add Field [ ]
+####Skyland Command
+>  | Command | Description | Permission | Aliases |
+>  | :-------: | :-------: | :-------: | :-------: |
+>  | /addskylandshare | Add Skyland Shared Player | Area Owner | [Player] [id] |
+>  | /buyskyland | Buy Skyland | default | [id(or don't need to)] |
+>  | /delskylandshare | Delete Skyland Shared Player | Area Owner | [Player] [id] |
+>  | /giveskyland | Give Skyland to other Player | Area Owner | [Player] [id] |
+>  | /infoskyland | Get Skyland Info | Default | [id] |
+>  | /warpskyland | Warp to Skyland | Default | [id] |
 
-
->>## Korean(한국어)
-
-### 설명
-이 플러그인은 섬/땅 플러그인입니다.
-이것은 무료로 사용이 가능하고. PSArea의 API도 사용이 가능합니다..
-
-### 명령어
-
-#### 하늘섬
-+ /warpisland [id] - [id]의 하늘섬으로 워프합니다.
-+ /infoisland [id(or now Island)] - [id]의 하늘섬의 정보를 보여줍니다.
-+ /buyisland [id] - [id]의 하늘섬을 삽니다.
-+ /addislandshare [player] [id(or now Island)] - [player]를 자신의 섬인 [id]의 공유자로 추가합니다.
-+ /giveisland [player] [id(or now island)] - [player]에게 하늘섬인 [id]를 줍니다.
-
-#### 바다섬
-+ /warpskyland [id] - [id]의 바다섬으로 워프합니다.
-+ /infoskyland [id(or now Island)] - [id]의 바다섬의 정보를 보여줍니다.
-+ /buyskyland [id] - [id]의 바다섬을 삽니다.
-+ /addskylandshare [player] [id(or now Island)] - [player]를 자신의 섬인 [id]의 공유자로 추가합니다.
-+ /giveskyland [player] [id(or now island)] - [player]에게 바다섬인 [id]를 줍니다.
-
-### 할일
-+ 평야 추가 [ ]
+####Land Command
+>  | Command | Description | Permission | Aliases |
+>  | :-------: | :-------: | :-------: | :-------: |
+>  | /addlandshare | Add Land Shared Player | Area Owner | [Player] [id] |
+>  | /buyland | Buy Land | default | [id(or don't need to)] |
+>  | /dellandshare | Delete Land Shared Player | Area Owner | [Player] [id] |
+>  | /giveland | Give Land to other Player | Area Owner | [Player] [id] |
+>  | /infoland | Get Land Info | Default | [id] |
+>  | /warpland | Warp to Land | Default | [id] |
