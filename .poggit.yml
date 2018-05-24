@@ -4,4 +4,5 @@ branches:
 projects:
   PSArea:
     path: ""
+    icon: psarea.png
 ...
