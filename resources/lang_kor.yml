@@ -20,10 +20,10 @@ commands-field-info-name: "평야정보"
 commands-field-info-description: "다른 평야 또는 자신의 평야의 정보 커맨드"
 commands-field-info-usage: "/평야정보 [id]"
 commands-field-info-aliases: ["Id"]
-commands-field-make-name: "평야목록"
-commands-field-make-description: "자신의 구매한 평야 번호를 보는 커맨드"
-commands-field-make-usage: "/평야목록"
-commands-field-make-aliases: []
+commands-field-registeredlist-name: "평야목록"
+commands-field-registeredlist-description: "평야목록을 볼 수 있습미다."
+commands-field-registeredlist-usage: "/평야목록"
+commands-field-registeredlist-aliases: []
 commands-field-warp-name: "평야이동"
 commands-field-warp-description: "원하는 평야로 이동하는 커맨드"
 commands-field-warp-usage: "/평야이동 [id]"

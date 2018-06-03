@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e2ee3e-cb7a-4137-b6c8-680220623133" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldArea.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldArea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang_kor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang_kor.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +17,17 @@
       <file leaf-file-name="lang_eng.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/lang_eng.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="399">
+              <caret line="22" selection-start-line="22" selection-end-line="25" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang_kor.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/lang_kor.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -28,8 +35,8 @@
       <file leaf-file-name="PSAreaMain.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
+            <state relative-caret-position="1729">
+              <caret line="146" column="35" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -37,11 +44,8 @@
       <file leaf-file-name="FieldGenerator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-              <folding>
-                <element signature="e#143#184#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="684">
+              <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -55,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FieldLoader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FieldLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="82" column="79" lean-forward="true" selection-start-line="82" selection-start-column="79" selection-end-line="82" selection-end-column="79" />
+            <state relative-caret-position="1425">
+              <caret line="82" column="79" selection-start-line="82" selection-start-column="79" selection-end-line="82" selection-end-column="79" />
               <folding>
                 <element signature="e#52#93#0#PHP" expanded="true" />
               </folding>
@@ -70,8 +74,8 @@
       <file leaf-file-name="FieldWarpCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Field/FieldWarpCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+            <state relative-caret-position="893">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -88,7 +92,7 @@
       <file leaf-file-name="IslandLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
+            <state relative-caret-position="1577">
               <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
               <folding>
                 <element signature="e#53#94#0#PHP" expanded="true" />
@@ -219,7 +223,6 @@
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandMakeCommand.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Tasks/FieldAutoAddTask.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" />
-        <option value="$PROJECT_DIR$/resources/lang_kor.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Generator/IslandGenerator.php" />
@@ -230,6 +233,7 @@
         <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" />
         <option value="$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php" />
+        <option value="$PROJECT_DIR$/resources/lang_kor.yml" />
       </list>
     </option>
   </component>
@@ -344,7 +348,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SmartUI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSWorldEdit" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -418,16 +422,20 @@
       <workItem from="1526634132114" duration="427000" />
       <workItem from="1526719986423" duration="44000" />
       <workItem from="1526991965806" duration="4621000" />
+      <workItem from="1527147385296" duration="38000" />
+      <workItem from="1527159286362" duration="20000" />
+      <workItem from="1528025477211" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76620000" />
+    <option name="totallyTimeSpent" value="76726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32760417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32760417" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -460,10 +468,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Object/Sphere.php">
+    <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="77" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
+        <state relative-caret-position="1577">
+          <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+          <folding>
+            <element signature="e#53#94#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -696,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang_kor.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -719,8 +723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang_eng.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="399">
+          <caret line="22" selection-start-line="22" selection-end-line="25" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -728,9 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding>
-            <element signature="e#48#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,25 +744,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
+        <state relative-caret-position="1729">
+          <caret line="146" column="35" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Generator/FieldGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="e#143#184#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="684">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Commands/Field/FieldWarpCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        <state relative-caret-position="893">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -781,7 +779,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Island/IslandLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
+        <state relative-caret-position="1577">
           <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
           <folding>
             <element signature="e#53#94#0#PHP" expanded="true" />
@@ -791,11 +789,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="82" column="79" lean-forward="true" selection-start-line="82" selection-start-column="79" selection-end-line="82" selection-end-column="79" />
+        <state relative-caret-position="1425">
+          <caret line="82" column="79" selection-start-line="82" selection-start-column="79" selection-end-line="82" selection-end-column="79" />
           <folding>
             <element signature="e#52#93#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang_kor.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
