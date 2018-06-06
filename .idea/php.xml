@@ -2,9 +2,9 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="F:/Server" />
       <path value="$PROJECT_DIR$/../StormServer" />
       <path value="$PROJECT_DIR$/../EconomyAPI" />
+      <path value="F:/Server" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

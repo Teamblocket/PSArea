@@ -2,13 +2,19 @@
     namespace ps88\psarea\Loaders\base;
 
     use pocketmine\math\Vector3;
+    use pocketmine\plugin\Plugin;
+    use pocketmine\plugin\PluginManager;
     use pocketmine\Server;
     use ps88\psarea\Events\LandAddEvent;
+    use ps88\psarea\PSAreaMain;
 
     abstract class BaseLoader {
 
         /** @var BaseArea[] */
         public $areas = [];
+
+        /** @var PluginManager */
+        protected $pluginmanager;
 
         public static $landcount;
 
