@@ -10,16 +10,16 @@ You can use it free. Plus, you can use PSArea API.
 
 ### About Field
 
-![](https://github.com/Potatoshare88/PSArea/blob/master/img/field.png)
+![](https://github.com/potatoshare88/PSArea/blob/master/img/field.png)
 
 
 ### About Island
 
-![](https://github.com/Potatoshare88/PSArea/blob/master/img/island.png)
+![](https://github.com/potatoshare88/PSArea/blob/master/img/island.png)
 
 ### About Skyland
 
-![](https://github.com/Potatoshare88/PSArea/blob/master/img/skyland.png)
+![](https://github.com/potatoshare88/PSArea/blob/master/img/skyland.png)
 
 ## Commands
 
@@ -35,7 +35,7 @@ You can use it free. Plus, you can use PSArea API.
 >  | /warpfield | Warp to field | Default | [id] |
 
 > ### Island Commands
-
+>
 >  | Command | Description | Permission | Aliases |
 >  | :-------: | :-------: | :-------: | :-------: |
 >  | /addislandshare | Add Island Shared Player | Area Owner | [Player] [id] |
@@ -46,7 +46,7 @@ You can use it free. Plus, you can use PSArea API.
 >  | /warpisland | Warp to Island | Default | [id] |
 
 > ### Skyland Commands
-
+>
 >  | Command | Description | Permission | Aliases |
 >  | :-------: | :-------: | :-------: | :-------: |
 >  | /addskylandshare | Add Skyland Shared Player | Area Owner | [Player] [id] |
@@ -57,7 +57,7 @@ You can use it free. Plus, you can use PSArea API.
 >  | /warpskyland | Warp to Skyland | Default | [id] |
 
 > ### Land Commands
-
+>
 >  | Command | Description | Permission | Aliases |
 >  | :-------: | :-------: | :-------: | :-------: |
 >  | /addlandshare | Add Land Shared Player | Area Owner | [Player] [id] |
