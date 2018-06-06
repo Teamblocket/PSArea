@@ -4,6 +4,7 @@
     use pocketmine\level\generator\Generator;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
+    use pocketmine\plugin\PluginManager;
     use pocketmine\Server;
     use pocketmine\utils\Config;
     use ps88\psarea\Generator\FieldGenerator;
