@@ -74,8 +74,8 @@ commands-land-info-usage: "/infoland [id]"
 commands-land-info-aliases: ["Id"]
 commands-land-make-name: "makeland"
 commands-land-make-description: "Make land"
-commands-land-make-usage: "/makeland [id]"
-commands-land-make-aliases: ["id"]
+commands-land-make-usage: "/makeland"
+commands-land-make-aliases: []
 commands-land-warp-name: "warpland"
 commands-land-warp-description: "Warp to land"
 commands-land-warp-usage: "/warpland [id]"

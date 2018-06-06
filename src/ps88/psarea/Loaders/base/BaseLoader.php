@@ -2,19 +2,29 @@
     namespace ps88\psarea\Loaders\base;
 
     use pocketmine\math\Vector3;
+    use pocketmine\plugin\Plugin;
+    use pocketmine\plugin\PluginManager;
     use pocketmine\Server;
     use ps88\psarea\Events\LandAddEvent;
+    use ps88\psarea\PSAreaMain;
 
     abstract class BaseLoader {
 
         /** @var BaseArea[] */
         public $areas = [];
 
+        /** @var PluginManager */
+        protected $pluginmanager;
+
         public static $landcount;
 
         public const Maximum_Lands = 3;
 
-        public const Land_Price = 30000;
+        public static $Land_Price = 30000;
+
+        public function __construct(int $price) {
+            self::$Land_Price = $price;
+        }
 
         /**
          * @param string $name

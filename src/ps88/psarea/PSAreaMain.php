@@ -6,7 +6,9 @@
             event\Listener,
             lang\BaseLang,
             lang\TextContainer,
+            plugin\PluginManager,
             plugin\PluginBase,
+            scheduler\TaskScheduler,
             utils\Color,
             utils\Config,
             utils\TextFormat
@@ -57,7 +59,6 @@
     use ps88\psarea\ProtectWorld\ProtectWorld;
     use ps88\psarea\Commands\ProtectWorld\setProtectWorldCommand;
     use ps88\psarea\Tasks\AreaAddTask;
-    use ps88\psarea\Tasks\FieldAutoAddTask;
 
     class PSAreaMain extends PluginBase implements Listener {
 
@@ -86,23 +87,29 @@
         public $setting;
 
         public function onLoad() {
-            $this->fieldloader = new FieldLoader();
-            $this->islandloader = new IslandLoader();
-            $this->skylandloader = new SkylandLoader();
-            $this->landloader = new LandLoader();
         }
 
         public function onEnable() {
-            $this->protectworld = new ProtectWorld($this);
-            $this->getServer()->getPluginManager()->registerEvents($this, $this);
-            $this->getServer()->getPluginManager()->registerEvents(new LandListener($this), $this);
-            $this->getServer()->getScheduler()->scheduleRepeatingTask(new AreaAddTask($this), 3);
-            $this->getServer()->getScheduler()->scheduleRepeatingTask(new FieldAutoAddTask($this), 20);
             @mkdir($this->getDataFolder());
             $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
                     "lang" => "eng",
-                "needidargs" => \false
+                    "needidargs" => \false,
+                "prices" => [
+                        "field" => 30000,
+                    "island" => 30000,
+                    "skyland" => 30000,
+                    "land" => 10
+                ]
             ]);
+            $prices = $this->setting->get("prices");
+            $this->fieldloader = new FieldLoader($prices["field"]);
+            $this->islandloader = new IslandLoader($prices["island"]);
+            $this->skylandloader = new SkylandLoader($prices["skyland"]);
+            $this->landloader = new LandLoader($prices["land"]);
+            $this->protectworld = new ProtectWorld($this);
+            $this->getServer()->getPluginManager()->registerEvents($this, $this);
+            $this->getServer()->getPluginManager()->registerEvents(new LandListener($this), $this);
+            $this->getScheduler()->scheduleRepeatingTask(new AreaAddTask($this->islandloader, $this->skylandloader, $this->fieldloader), 3);
             $lang = $this->setting->get("lang");
             if(!file_exists($this->getDataFolder()."lang_{$lang}.yml")) {
                 file_put_contents($this->getDataFolder() . "lang_{$lang}.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
@@ -135,7 +142,17 @@
             $this->landloader->saveAll();
         }
 
-        public function loadLevels(): void {
+        public function getScheduler(): TaskScheduler{
+            try{
+                $v = parent::getScheduler();
+            }catch (\Exception $e){
+                $v = $this->getServer()->getScheduler();
+            }finally{
+                return $v;
+            }
+        }
+
+        private function loadLevels(): void {
             /** @var BaseLoader[] $loaders */
             $loaders = [
                     $this->fieldloader,
@@ -148,7 +165,7 @@
             }
         }
 
-        public function registerCommands(): void {
+        private function registerCommands(): void {
             $this->getServer()->getCommandMap()->registerAll('PSArea', [
                     new FieldAddShareCommand($this, self::getCommands("field-addshare-name"), self::getCommands("field-addshare-description"), self::getCommands("field-addshare-usage"), self::getCommands("field-addshare-aliases")),
                     new FieldBuyCommand($this, self::getCommands("field-buy-name"), self::getCommands("field-buy-description"), self::getCommands("field-buy-usage"), self::getCommands("field-buy-aliases")),
