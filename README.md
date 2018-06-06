@@ -10,20 +10,22 @@ You can use it free. Plus, you can use PSArea API.
 
 ##About Field
 
-[![](https://github.com/Potatoshare88/PSArea/blob/master/img/field.png)]
+![](https://github.com/Potatoshare88/PSArea/blob/master/img/field.png)
+
+
 
 ##About Island
 
-[![](https://github.com/Potatoshare88/PSArea/blob/master/img/island.png)]
+![](https://github.com/Potatoshare88/PSArea/blob/master/img/island.png)
 
 ##About Skyland
 
-[![](https://github.com/Potatoshare88/PSArea/blob/master/img/skyland.png)]
+![](https://github.com/Potatoshare88/PSArea/blob/master/img/skyland.png)
 
 ## Commands
 
-###Field Commands
-
+> ##Field Commands
+>
 >  | Command | Description | Permission | Aliases |
 >  | :-------: | :-------: | :-------: | :-------: |
 >  | /addfieldshare | Add Field Shared Player | Area Owner | [Player] [id] |
