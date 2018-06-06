@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e2ee3e-cb7a-4137-b6c8-680220623133" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang_eng.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang_eng.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Field/FieldBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Field/FieldBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Island/IslandBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Land/LandBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Commands/Skyland/SkylandBuyCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Field/FieldLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Land/LandArea.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/Land/LandArea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/Loaders/base/BaseLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/Loaders/base/BaseLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ps88/psarea/PSAreaMain.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +53,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1121">
-                <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+              <first_editor relative-caret-position="1216">
+                <caret line="64" column="88" lean-forward="true" selection-start-line="64" selection-start-column="88" selection-end-line="64" selection-end-column="88" />
               </first_editor>
               <second_editor />
             </state>
@@ -547,7 +536,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78468000" />
+    <option name="totallyTimeSpent" value="78658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -921,8 +910,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1121">
-            <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <first_editor relative-caret-position="1216">
+            <caret line="64" column="88" lean-forward="true" selection-start-line="64" selection-start-column="88" selection-end-line="64" selection-end-column="88" />
           </first_editor>
           <second_editor />
         </state>
