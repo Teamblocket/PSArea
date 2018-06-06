@@ -57,8 +57,8 @@
                 $sender->sendMessage(PSAreaMain::get("you-have-max", \true, ["@type", "field"]));
                 return \true;
             }
-            if (MoneyTranslator::getInstance()->getMoney($sender) < FieldLoader::Land_Price) {
-                $sender->sendMessage(PSAreaMain::get("you-need-money", \true, ["@money", FieldLoader::Land_Price]));
+            if (MoneyTranslator::getInstance()->getMoney($sender) < FieldLoader::$Land_Price) {
+                $sender->sendMessage(PSAreaMain::get("you-need-money", \true, ["@money", FieldLoader::$Land_Price]));
                 return \true;
             }
             Server::getInstance()->getPluginManager()->callEvent($ev = new LandBuyEvent($a, $sender));
@@ -67,7 +67,7 @@
                 return \true;
             }
             $a->setOwner($sender);
-            MoneyTranslator::getInstance()->reduceMoney($sender, FieldLoader::Land_Price);
+            MoneyTranslator::getInstance()->reduceMoney($sender, FieldLoader::$Land_Price);
             $sender->sendMessage(PSAreaMain::get("you-bought", \true, ["@landnum", $a->getLandnum()], ["@type", "field"]));
             $nm = MoneyTranslator::getInstance()->getMoney($sender);
             $sender->sendMessage(PSAreaMain::get("your-money-now", \true, ["@money", $nm]));

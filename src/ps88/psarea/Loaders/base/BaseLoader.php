@@ -20,7 +20,11 @@
 
         public const Maximum_Lands = 3;
 
-        public const Land_Price = 30000;
+        public static $Land_Price = 30000;
+
+        public function __construct(int $price) {
+            self::$Land_Price = $price;
+        }
 
         /**
          * @param string $name

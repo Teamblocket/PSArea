@@ -2,5 +2,6 @@ name: "PSArea"
 author: "PS88"
 api:
  - 3.0.0-ALPHA12
-version: 1.0.0
+ - 3.0.0-ALPHA13
+version: 1.0.1
 main: ps88\psarea\PSAreaMain

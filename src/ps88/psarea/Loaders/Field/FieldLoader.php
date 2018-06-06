@@ -22,7 +22,8 @@
         /** @var FieldLoader|null */
         private static $Instance = \null;
 
-        public function __construct() {
+        public function __construct(int $price) {
+            parent::__construct($price);
             self::$Instance = $this;
         }
 

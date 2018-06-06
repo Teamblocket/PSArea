@@ -8,6 +8,7 @@
             lang\TextContainer,
             plugin\PluginManager,
             plugin\PluginBase,
+            scheduler\TaskScheduler,
             utils\Color,
             utils\Config,
             utils\TextFormat
@@ -89,19 +90,26 @@
         }
 
         public function onEnable() {
-            $this->fieldloader = new FieldLoader();
-            $this->islandloader = new IslandLoader();
-            $this->skylandloader = new SkylandLoader();
-            $this->landloader = new LandLoader();
+            @mkdir($this->getDataFolder());
+            $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
+                    "lang" => "eng",
+                    "needidargs" => \false,
+                "prices" => [
+                        "field" => 30000,
+                    "island" => 30000,
+                    "skyland" => 30000,
+                    "land" => 10
+                ]
+            ]);
+            $prices = $this->setting->get("prices");
+            $this->fieldloader = new FieldLoader($prices["field"]);
+            $this->islandloader = new IslandLoader($prices["island"]);
+            $this->skylandloader = new SkylandLoader($prices["skyland"]);
+            $this->landloader = new LandLoader($prices["land"]);
             $this->protectworld = new ProtectWorld($this);
             $this->getServer()->getPluginManager()->registerEvents($this, $this);
             $this->getServer()->getPluginManager()->registerEvents(new LandListener($this), $this);
             $this->getScheduler()->scheduleRepeatingTask(new AreaAddTask($this->islandloader, $this->skylandloader, $this->fieldloader), 3);
-            @mkdir($this->getDataFolder());
-            $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
-                    "lang" => "eng",
-                "needidargs" => \false
-            ]);
             $lang = $this->setting->get("lang");
             if(!file_exists($this->getDataFolder()."lang_{$lang}.yml")) {
                 file_put_contents($this->getDataFolder() . "lang_{$lang}.yml", stream_get_contents($this->getResource("lang_{$lang}.yml")));
@@ -132,6 +140,16 @@
             $this->skylandloader->saveAll();
             $this->fieldloader->saveAll();
             $this->landloader->saveAll();
+        }
+
+        public function getScheduler(): TaskScheduler{
+            try{
+                $v = parent::getScheduler();
+            }catch (\Exception $e){
+                $v = $this->getServer()->getScheduler();
+            }finally{
+                return $v;
+            }
         }
 
         private function loadLevels(): void {

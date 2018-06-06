@@ -30,6 +30,12 @@
             return \true;
         }
 
+        public function getSize(): int{
+            $v = $this->getMinVector();
+            $v2 = $this->getMaxVector();
+            return ($v2->x - $v->x) * ($v2->y - $v->y);
+        }
+
         /**
          * @return Level
          */
