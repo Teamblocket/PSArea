@@ -6,6 +6,7 @@
             event\Listener,
             lang\BaseLang,
             lang\TextContainer,
+            plugin\PluginManager,
             plugin\PluginBase,
             utils\Color,
             utils\Config,
@@ -57,7 +58,6 @@
     use ps88\psarea\ProtectWorld\ProtectWorld;
     use ps88\psarea\Commands\ProtectWorld\setProtectWorldCommand;
     use ps88\psarea\Tasks\AreaAddTask;
-    use ps88\psarea\Tasks\FieldAutoAddTask;
 
     class PSAreaMain extends PluginBase implements Listener {
 
@@ -86,18 +86,17 @@
         public $setting;
 
         public function onLoad() {
+        }
+
+        public function onEnable() {
             $this->fieldloader = new FieldLoader();
             $this->islandloader = new IslandLoader();
             $this->skylandloader = new SkylandLoader();
             $this->landloader = new LandLoader();
-        }
-
-        public function onEnable() {
             $this->protectworld = new ProtectWorld($this);
             $this->getServer()->getPluginManager()->registerEvents($this, $this);
             $this->getServer()->getPluginManager()->registerEvents(new LandListener($this), $this);
-            $this->getServer()->getScheduler()->scheduleRepeatingTask(new AreaAddTask($this), 3);
-            $this->getServer()->getScheduler()->scheduleRepeatingTask(new FieldAutoAddTask($this), 20);
+            $this->getScheduler()->scheduleRepeatingTask(new AreaAddTask($this->islandloader, $this->skylandloader, $this->fieldloader), 3);
             @mkdir($this->getDataFolder());
             $this->setting = new Config($this->getDataFolder()."setting.yml", Config::YAML, [
                     "lang" => "eng",
@@ -135,7 +134,7 @@
             $this->landloader->saveAll();
         }
 
-        public function loadLevels(): void {
+        private function loadLevels(): void {
             /** @var BaseLoader[] $loaders */
             $loaders = [
                     $this->fieldloader,
@@ -148,7 +147,7 @@
             }
         }
 
-        public function registerCommands(): void {
+        private function registerCommands(): void {
             $this->getServer()->getCommandMap()->registerAll('PSArea', [
                     new FieldAddShareCommand($this, self::getCommands("field-addshare-name"), self::getCommands("field-addshare-description"), self::getCommands("field-addshare-usage"), self::getCommands("field-addshare-aliases")),
                     new FieldBuyCommand($this, self::getCommands("field-buy-name"), self::getCommands("field-buy-description"), self::getCommands("field-buy-usage"), self::getCommands("field-buy-aliases")),
