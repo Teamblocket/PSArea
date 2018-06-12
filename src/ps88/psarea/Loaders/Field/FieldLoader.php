@@ -2,6 +2,7 @@
     namespace ps88\psarea\Loaders\Field;
 
     use pocketmine\level\generator\Generator;
+    use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
     use pocketmine\plugin\PluginManager;
@@ -99,8 +100,8 @@
         }
 
         public function loadLevel(): void {
-            Generator::addGenerator(FieldGenerator::class, "field");
-            $g = Generator::getGenerator("field");
+            GeneratorManager::addGenerator(FieldGenerator::class, "field");
+            $g = GeneratorManager::getGenerator("field");
             if (!Server::getInstance()->loadLevel("field")) {
                 @mkdir(Server::getInstance()->getDataPath() . "/" . "worlds" . "/" . "field");
                 Server::getInstance()->generateLevel("field", \null, $g, []);

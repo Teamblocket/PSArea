@@ -2,6 +2,7 @@
     namespace ps88\psarea\Loaders\Skyland;
 
     use pocketmine\level\generator\Generator;
+    use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
     use pocketmine\Server;
@@ -84,8 +85,8 @@
         }
 
         public function loadLevel(): void {
-            Generator::addGenerator(SkylandGenerator::class, 'skyland');
-            $g = Generator::getGenerator("skyland");
+            GeneratorManager::addGenerator(SkylandGenerator::class, 'skyland');
+            $g = GeneratorManager::getGenerator("skyland");
             if (!Server::getInstance()->loadLevel("skyland")) {
                 @mkdir(Server::getInstance()->getDataPath() . "/" . "worlds" . "/" . "skyland");
                 Server::getInstance()->generateLevel("skyland", \null, $g, []);

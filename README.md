@@ -2,6 +2,8 @@
 [![](https://poggit.pmmp.io/shield.state/PSArea)](https://poggit.pmmp.io/p/PSArea)
 
 [![](https://poggit.pmmp.io/shield.api/PSArea)](https://poggit.pmmp.io/p/PSArea)
+
+[![](https://poggit.pmmp.io/shield.dl.total/PSArea)](https://poggit.pmmp.io/p/PSArea)
 >> # English
 
 ## Instruction

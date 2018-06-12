@@ -17,13 +17,9 @@
 
             //public static TYPE_GRID_LAND = 11;
 
-            /** @var ChunkManager */
-            private $level;
 
             private $options = [];
             private $floorLevel;
-
-            private $random;
 
             private $flatBlocks = [[Block::BEDROCK, 0], [Block::STONE, 0], [Block::STONE, 0], [Block::STONE, 0], [Block::STONE, 0], [Block::DIRT, 0], [Block::DIRT, 0], [Block::DIRT, 0]];
             private $roadBlock = [Block::STONE, BlockStone::POLISHED_ANDESITE];
@@ -47,11 +43,6 @@
                 return "field";
             }
 
-            public function init(ChunkManager $level, Random $random) {
-                $this->level = $level;
-                $this->random = $random;
-            }
-
             public function __construct(array $options = []) {
 
             }
@@ -72,7 +63,7 @@
                 return $this->roadDepth;
             }
 
-            public function generateChunk(int $chunkX, int $chunkZ) {
+            public function generateChunk(int $chunkX, int $chunkZ): void {
                 $chunk = $this->level->getChunk($chunkX, $chunkZ);
                 if ($chunkX >= 0 && $chunkZ >= 0) {
                     for ($x = 0; $x <= 15; $x++) {
@@ -116,7 +107,7 @@
                 return $this->roadBlock;
             }
 
-            public function populateChunk(int $chunkX, int $chunkZ) {
+            public function populateChunk(int $chunkX, int $chunkZ): void {
             }
 
             public function getSpawn(): Vector3 {

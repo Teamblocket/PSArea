@@ -12,16 +12,6 @@
 
     class SkylandGenerator extends Generator {
 
-        /** @var ChunkManager */
-        private $level;
-        /** @var Random */
-        private $random;
-
-        public function init(ChunkManager $level, Random $random) {
-            $this->level = $level;
-            $this->random = $random;
-        }
-
         public function __construct(array $options = []) {
             //parent::__construct($options);
         }
@@ -34,7 +24,7 @@
             return "skyland";
         }
 
-        public function generateChunk(int $chunkX, int $chunkZ) {
+        public function generateChunk(int $chunkX, int $chunkZ): void {
             $chunk = $this->level->getChunk($chunkX, $chunkZ);
 
             if ($chunkX > 0 and $chunkZ > 0) {
@@ -57,7 +47,7 @@
             $this->level->setChunk($chunkX, $chunkZ, $chunk);
         }
 
-        public function populateChunk($chunkX, $chunkZ) {
+        public function populateChunk($chunkX, $chunkZ): void {
             if ($chunkX > 0 and $chunkZ > 0) {
                 $islandX = ($chunkX * 16) % 200;
                 $islandZ = ($chunkZ * 16) % 200;

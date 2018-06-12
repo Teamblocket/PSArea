@@ -2,6 +2,7 @@
     namespace ps88\psarea\Loaders\Island;
 
     use pocketmine\level\generator\Generator;
+    use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
     use pocketmine\Server;
@@ -87,8 +88,8 @@
         }
 
         public function loadLevel(): void {
-            Generator::addGenerator(IslandGenerator::class, 'island');
-            $g = Generator::getGenerator("island");
+            GeneratorManager::addGenerator(IslandGenerator::class, 'island');
+            $g = GeneratorManager::getGenerator("island");
             if (!Server::getInstance()->loadLevel("island")) {
                 @mkdir(Server::getInstance()->getDataPath() . "/" . "worlds" . "/" . "island");
                 Server::getInstance()->generateLevel("island", \null, $g, []);
