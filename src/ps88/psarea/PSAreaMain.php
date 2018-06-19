@@ -142,16 +142,6 @@
             $this->landloader->saveAll();
         }
 
-        public function getScheduler(): TaskScheduler{
-            try{
-                $v = parent::getScheduler();
-            }catch (\Exception $e){
-                $v = $this->getServer()->getScheduler();
-            }finally{
-                return $v;
-            }
-        }
-
         private function loadLevels(): void {
             /** @var BaseLoader[] $loaders */
             $loaders = [
