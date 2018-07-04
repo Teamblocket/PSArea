@@ -1,25 +1,27 @@
 <?php
-    namespace ps88\psarea\Commands\Field;
+    namespace ps88\psarea\commands\field;
 
     use pocketmine\command\Command;
-    use pocketmine\command\CommandSender;
-    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\loaders\LoaderManager;
+    use pocketmine\command\commandsender;
+
+    use ps88\psarea\translator\Translator;
 
     class FieldRegisteredList extends Command {
-        /** @var PSAreaMain */
-        private $owner;
+
+
 
         /**
          * FieldInfoCommand constructor.
          * @param string $name
-         * @param PSAreaMain $owner
+         *
          * @param string $description
          * @param string|null $usageMessage
          * @param array $aliases
          */
-        public function __construct(PSAreaMain $owner, string $name = "fieldlist", string $description = "field list", string $usageMessage = "/fieldlist", $aliases = []) {
+        public function __construct( string $name = "fieldlist", string $description = "field list", string $usageMessage = "/fieldlist", $aliases = []) {
             parent::__construct($name, $description, $usageMessage, $aliases);
-            $this->owner = $owner;
+
         }
 
         /**
@@ -30,8 +32,8 @@
          * @return bool
          */
         public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
-            $s = PSAreaMain::get("field-list"). " : ";
-            foreach ($this->owner->fieldloader->getAreas() as $area) {
+            $s = Translator::get("field-list") . " : ";
+            foreach (LoaderManager::$fieldloader->getAreas() as $area) {
                 if ($area->owner == \null) continue;
                 $s .= "[" . $area->getLandnum() . "]";
             }

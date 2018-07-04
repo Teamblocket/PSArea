@@ -1,15 +1,22 @@
 <?php
-    namespace ps88\psarea\Loaders\Skyland;
+    namespace ps88\psarea\loaders\skyland;
 
-    use pocketmine\level\generator\Generator;
     use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
     use pocketmine\Server;
     use pocketmine\utils\Config;
-    use ps88\psarea\Generator\SkylandGenerator;
-    use ps88\psarea\Loaders\base\BaseArea;
-    use ps88\psarea\Loaders\base\BaseLoader;
+    use ps88\psarea\commands\skyland\SkylandAddShareCommand;
+    use ps88\psarea\commands\skyland\SkylandBuyCommand;
+    use ps88\psarea\commands\skyland\SkylandDelShareCommand;
+    use ps88\psarea\commands\skyland\SkylandGiveCommand;
+    use ps88\psarea\commands\skyland\SkylandInfoCommand;
+    use ps88\psarea\commands\skyland\SkylandWarpCommand;
+    use ps88\psarea\generator\SkylandGenerator;
+    use ps88\psarea\loaders\base\BaseArea;
+    use ps88\psarea\loaders\base\BaseLoader;
+    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\translator\Translator;
 
     class SkylandLoader extends BaseLoader {
         /** @var SkylandArea[] */
@@ -85,6 +92,16 @@
         }
 
         public function loadLevel(): void {
+            $p = Server::getInstance()->getPluginManager()->getPlugin("PSArea");
+            if(! $p instanceof PSAreaMain) return;
+            Server::getInstance()->getCommandMap()->registerAll("PSArea", [
+                    new SkylandAddShareCommand( Translator::getCommands("skyland-addshare-name"), Translator::getCommands("skyland-addshare-description"), Translator::getCommands("skyland-addshare-usage"), Translator::getCommands("skyland-addshare-aliases")),
+                    new SkylandBuyCommand( Translator::getCommands("skyland-buy-name"), Translator::getCommands("skyland-buy-description"), Translator::getCommands("skyland-buy-usage"), Translator::getCommands("skyland-buy-aliases")),
+                    new SkylandGiveCommand( Translator::getCommands("skyland-give-name"), Translator::getCommands("skyland-give-description"), Translator::getCommands("skyland-give-usage"), Translator::getCommands("skyland-give-aliases")),
+                    new SkylandInfoCommand( Translator::getCommands("skyland-info-name"), Translator::getCommands("skyland-info-description"), Translator::getCommands("skyland-info-usage"), Translator::getCommands("skyland-info-aliases")),
+                    new SkylandWarpCommand( Translator::getCommands("skyland-warp-name"), Translator::getCommands("skyland-warp-description"), Translator::getCommands("skyland-warp-usage"), Translator::getCommands("skyland-warp-aliases")),
+                    new SkylandDelShareCommand( Translator::getCommands("skyland-delshare-name"), Translator::getCommands("skyland-delshare-description"), Translator::getCommands("skyland-delshare-usage"), Translator::getCommands("skyland-delshare-aliases"))
+            ]);
             GeneratorManager::addGenerator(SkylandGenerator::class, 'skyland');
             $g = GeneratorManager::getGenerator("skyland");
             if (!Server::getInstance()->loadLevel("skyland")) {

@@ -1,30 +1,32 @@
 <?php
-    namespace ps88\psarea\Commands\Land;
+    namespace ps88\psarea\commands\land;
 
-    use nlog\StormCore\StormPlayer;
+
     use pocketmine\command\Command;
-    use pocketmine\command\CommandSender;
+    use ps88\psarea\loaders\LoaderManager;
+    use pocketmine\command\commandsender;
     use pocketmine\Player;
     use pocketmine\Server;
-    use ps88\psarea\Loaders\Land\LandLoader;
-    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\loaders\land\LandLoader;
+
+    use ps88\psarea\translator\Translator;
 
     class LandGiveCommand extends Command {
 
-        /** @var PSAreaMain */
-        private $owner;
+
+
 
         /**
          * LandGiveCommand constructor.
          * @param string $name
-         * @param PSAreaMain $owner
+         *
          * @param string $description
          * @param string|null $usageMessage
          * @param array $aliases
          */
-        public function __construct(PSAreaMain $owner, string $name = "giveland", string $description = "Give Land to other Player", string $usageMessage = "/giveland [player] [id]", $aliases = ['Player', 'Id']) {
+        public function __construct( string $name = "giveland", string $description = "Give Land to other Player", string $usageMessage = "/giveland [player] [id]", $aliases = ['Player', 'Id']) {
             parent::__construct($name, $description, $usageMessage, $aliases);
-            $this->owner = $owner;
+
         }
 
         /**
@@ -36,12 +38,12 @@
          */
         public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
             if (!$sender instanceof Player) {
-                $sender->sendMessage(PSAreaMain::get("only-player"));
+                $sender->sendMessage(Translator::get("only-player"));
                 return \true;
             }
-            $a = (!isset($args[1])) ? $this->owner->landloader->getAreaByPosition($sender) : $this->owner->landloader->getAreaById($args[1]);
+            $a = (!isset($args[1])) ? LoaderManager::$landloader->getAreaByPosition($sender) : LoaderManager::$landloader->getAreaById($args[1]);
             if ($a == \null) {
-                $sender->sendMessage(PSAreaMain::get("not-registered"));
+                $sender->sendMessage(Translator::get("not-registered"));
                 return \true;
             }
             if (!isset($args[0])) {
@@ -50,15 +52,15 @@
             }
             $pl = Server::getInstance()->getPlayer($args[0]);
             if ($pl == \null) {
-                $sender->sendMessage(PSAreaMain::get("doesnt-exist"));
+                $sender->sendMessage(Translator::get("doesnt-exist"));
                 return \true;
             }
-            if (count($this->owner->landloader->getAreasByOwner($pl->getName())) >= LandLoader::Maximum_Lands) {
-                $sender->sendMessage(PSAreaMain::get("you-have-max", \true, ["@type", "land"]));
+            if (count(LoaderManager::$landloader->getAreasByOwner($pl->getName())) >= LandLoader::Maximum_Lands) {
+                $sender->sendMessage(Translator::get("you-have-max", \true, ["@type", "land"]));
                 return \true;
             }
             $a->setOwner($pl);
-            $sender->sendMessage(PSAreaMain::get("owner-changed"));
-            $pl->sendMessage(PSAreaMain::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()], ["@type", "field"]));
+            $sender->sendMessage(Translator::get("owner-changed"));
+            $pl->sendMessage(Translator::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()], ["@type", "field"]));
         }
     }

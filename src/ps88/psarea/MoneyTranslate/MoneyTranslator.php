@@ -9,68 +9,70 @@
     use pocketmine\Server;
 
     class MoneyTranslator {
+        public const EconomyPluginList = [
+                "StormCore",
+                "EconomyAPI"
+        ];
+
         /** @var Plugin */
-        private $moneyAPI;
+        private static $moneyAPI;
 
-        /** @var MoneyTranslator|null */
-        private static $instance = null;
-
-        public function __construct(Plugin $moneyAPI) {
-            self::$instance = $this;
-            $this->moneyAPI = $moneyAPI;
+        public static function run() {
+            foreach (self::EconomyPluginList as $s)
+                if (Server::getInstance()->getPluginManager()->getPlugin($s) !== \null) self::$moneyAPI = Server::getInstance()->getPluginManager()->getPlugin($s);
+            if (self::$moneyAPI == \null) {
+                Server::getInstance()->getLogger()->emergency("No Economy Plugin!!");
+                Server::getInstance()->getPluginManager()->disablePlugin(Server::getInstance()->getPluginManager()->getPlugin("PSArea"));
+            }
         }
 
-        public function getMoney($player): ?int {
+        public static function getMoney($player): ?int {
             $pl = ($player instanceof Player) ? $player : Server::getInstance()->getPlayer($player);
             if ($pl == \null and $pl = Server::getInstance()->getOfflinePlayer($player) == \null) return \null;
-            if ($this->moneyAPI instanceof EconomyAPI) {
-                return $this->moneyAPI->myMoney($player);
-            } elseif ($this->moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
+            if (self::$moneyAPI instanceof EconomyAPI) {
+                return self::$moneyAPI->myMoney($player);
+            } elseif (self::$moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
                 return $pl->getMoney();
             }
             return \null;
         }
 
-        public function addMoney($player, int $money): bool {
+        public static function addMoney($player, int $money): bool {
             $pl = ($player instanceof Player) ? $player : Server::getInstance()->getPlayer($player);
             if ($pl == \null and $pl = Server::getInstance()->getOfflinePlayer($player) == \null) return \false;
-            if ($this->moneyAPI instanceof EconomyAPI) {
-                $this->moneyAPI->addMoney($player, $money);
+            if (self::$moneyAPI instanceof EconomyAPI) {
+                self::$moneyAPI->addMoney($player, $money);
                 return true;
-            } elseif ($this->moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
+            } elseif (self::$moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
                 $pl->addMoney($money);
                 return true;
             }
             return false;
         }
 
-        public function reduceMoney($player, int $money): bool {
+        public static function reduceMoney($player, int $money): bool {
             $pl = ($player instanceof Player) ? $player : Server::getInstance()->getPlayer($player);
             if ($pl == \null and $pl = Server::getInstance()->getOfflinePlayer($player) == \null) return \false;
-            if ($this->moneyAPI instanceof EconomyAPI) {
-                $this->moneyAPI->reduceMoney($player, $money);
+            if (self::$moneyAPI instanceof EconomyAPI) {
+                self::$moneyAPI->reduceMoney($player, $money);
                 return true;
-            } elseif ($this->moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
+            } elseif (self::$moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
                 $pl->reduceMoney($money);
                 return true;
             }
             return false;
         }
 
-        public function setMoney($player, int $money): bool {
+        public static function setMoney($player, int $money): bool {
             $pl = ($player instanceof Player) ? $player : Server::getInstance()->getPlayer($player);
             if ($pl == \null and $pl = Server::getInstance()->getOfflinePlayer($player) == \null) return \false;
-            if ($this->moneyAPI instanceof EconomyAPI) {
-                $this->moneyAPI->setMoney($player, $money);
+            if (self::$moneyAPI instanceof EconomyAPI) {
+                self::$moneyAPI->setMoney($player, $money);
                 return true;
-            } elseif ($this->moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
+            } elseif (self::$moneyAPI instanceof StormCore && $pl instanceof StormPlayer) {
                 $pl->setMoney($money);
                 return true;
             }
             return false;
-        }
-
-        public static function getInstance(): ?MoneyTranslator {
-            return self::$instance;
         }
     }

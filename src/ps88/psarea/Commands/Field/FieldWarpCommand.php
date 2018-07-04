@@ -1,31 +1,31 @@
 <?php
-    namespace ps88\psarea\Commands\Field;
+    namespace ps88\psarea\commands\field;
 
-    use nlog\StormCore\StormPlayer;
+
     use pocketmine\command\Command;
-    use pocketmine\command\CommandSender;
-    use pocketmine\level\Position;
+    use ps88\psarea\loaders\LoaderManager;
+    use pocketmine\command\commandsender;
     use pocketmine\Player;
-    use pocketmine\Server;
-    use ps88\psarea\Loaders\Field\FieldLoader;
-    use ps88\psarea\PSAreaMain;
+
+
+    use ps88\psarea\translator\Translator;
 
     class FieldWarpCommand extends Command {
 
-        /** @var PSAreaMain */
-        private $owner;
+
+
 
         /**
          * FieldInfoCommand constructor.
          * @param string $name
-         * @param PSAreaMain $owner
+         *
          * @param string $description
          * @param string|null $usageMessage
          * @param array $aliases
          */
-        public function __construct(PSAreaMain $owner, string $name = "warpfield", string $description = "Warp to field", string $usageMessage = "/warpfield [id]", $aliases = ['Id']) {
+        public function __construct( string $name = "warpfield", string $description = "Warp to field", string $usageMessage = "/warpfield [id]", $aliases = ['Id']) {
             parent::__construct($name, $description, $usageMessage, $aliases);
-            $this->owner = $owner;
+
         }
 
         /**
@@ -37,7 +37,7 @@
          */
         public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
             if (!$sender instanceof Player) {
-                $sender->sendMessage(PSAreaMain::get("only-player"));
+                $sender->sendMessage(Translator::get("only-player"));
                 return \true;
             }
             if (!isset($args[0])) {
@@ -45,15 +45,15 @@
                 return \true;
             }
             $id = (int) $args[0];
-            if (($a = $this->owner->fieldloader->getAreaById($id)) == \null) {
-                $sender->sendMessage(PSAreaMain::get("not-registered"));
+            if (($a = LoaderManager::$fieldloader->getAreaById($id)) == \null) {
+                $sender->sendMessage(Translator::get("not-registered"));
                 return \true;
             }
             if (!$a->Warp($sender)) {
-                $sender->sendMessage(PSAreaMain::get("cancelled"));
+                $sender->sendMessage(Translator::get("cancelled"));
                 return \true;
             }
-            $sender->sendMessage(PSAreaMain::get("warp-to", \true, ["@landnum", $id], ["@type", "field"]));
+            $sender->sendMessage(Translator::get("warp-to", \true, ["@landnum", $id], ["@type", "field"]));
             return \true;
         }
     }

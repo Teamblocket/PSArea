@@ -1,10 +1,8 @@
 <?php
-    namespace ps88\psarea\Generator;
+    namespace ps88\psarea\generator;
 
-    use ps88\psarea\Object\Sphere;
+    use ps88\psarea\object\Sphere;
     use pocketmine\math\Vector3;
-    use pocketmine\level\ChunkManager;
-    use pocketmine\utils\Random;
     use pocketmine\level\generator\Generator;
     use pocketmine\level\generator\object\{
             Tree, TallGrass

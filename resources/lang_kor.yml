@@ -1,5 +1,5 @@
 Prefix: "[ PSArea ]"
-# Commands
+# commands
 commands-field-addshare-name: "평야공유"
 commands-field-addshare-description: "자신의 평야를 공유(플레이어)해주는 커맨드"
 commands-field-addshare-usage: "/평야공유 [이름] [id]"
@@ -141,3 +141,10 @@ message-cant-find-level: "레벨을 찾을 수 없습니다."
 message-world-will-be-protected: "@level 레벨이 이제부터 보호될 것 입니다"
 message-registered-first-vector2: "첫 좌표 등록 완료"
 message-registered-all: "등록완료"
+message-island: "하늘섬"
+message-skyland: "바다섬"
+message-field: "평야"
+message-land: "영역"
+message-welcome-to-type: "@type @landnum번으로 오신 것을 환영합니다."
+message-no-owner: "현재 주인이 없습니다. @type 구매는 /@type구매 "
+message-cant-access: "당신은 여기에 들어올 권한이 없습니다."

@@ -1,13 +1,14 @@
 <?php
-    namespace ps88\psarea\Loaders\Skyland;
+    namespace ps88\psarea\loaders\skyland;
 
     use pocketmine\level\Position;
     use pocketmine\math\Vector2;
     use pocketmine\IPlayer;
     use pocketmine\Player;
     use pocketmine\Server;
-    use ps88\psarea\Events\LandWarpEvent;
-    use ps88\psarea\Loaders\base\BaseArea;
+    use ps88\psarea\events\area\PSAreaWarpEvent;
+    use ps88\psarea\loaders\base\BaseArea;
+    use ps88\psarea\translator\Translator;
 
     class SkylandArea extends BaseArea {
         public const LandType = self::Skyland;
@@ -29,9 +30,13 @@
             return $this->center;
         }
 
+        protected function TypeAsString(): string {
+            return Translator::get("skyland", \false);
+        }
+
         public function Warp(Player $pl): bool {
             $v = $this->getCenter();
-            Server::getInstance()->getPluginManager()->callEvent($ev = new LandWarpEvent($this, $pl));
+            Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaWarpEvent($this, $pl));
             if ($ev->isCancelled()) return \false;
             $x = ($this->getLandnum() % 2 == 0) ? $v->x : $v->x - 5;
             $pl->teleport(new Position($x, 14, $v->y, Server::getInstance()->getLevelByName('skyland')));

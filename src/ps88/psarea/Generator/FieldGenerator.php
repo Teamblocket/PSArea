@@ -1,5 +1,5 @@
 <?php
-    namespace ps88\psarea\Generator {
+    namespace ps88\psarea\generator {
 
         /*
          * 이 코드는 SOLOLand(Nukkit) 에서 가져왔으며
@@ -11,7 +11,6 @@
         use pocketmine\block\Stone as BlockStone;
         use pocketmine\level\ChunkManager;
         use pocketmine\math\Vector3;
-        use pocketmine\utils\Random;
 
         class FieldGenerator extends Generator {
 
@@ -115,4 +114,3 @@
             }
         }
     }
-

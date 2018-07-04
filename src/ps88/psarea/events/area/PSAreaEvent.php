@@ -1,13 +1,13 @@
 <?php
-    namespace ps88\psarea\Events;
+    namespace ps88\psarea\events\area;
 
     use pocketmine\event\Cancellable;
     use pocketmine\event\Event;
-    use ps88\psarea\Loaders\base\BaseArea;
+    use ps88\psarea\loaders\base\BaseArea;
 
-    class LandAddEvent extends Event implements Cancellable {
+    abstract class PSAreaEvent extends Event implements Cancellable {
         /** @var BaseArea */
-        private $area;
+        protected $area;
 
         public function __construct(BaseArea $area) {
             $this->area = $area;

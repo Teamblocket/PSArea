@@ -1,30 +1,32 @@
 <?php
-    namespace ps88\psarea\Commands\Skyland;
+    namespace ps88\psarea\commands\skyland;
 
-    use nlog\StormCore\StormPlayer;
+
     use pocketmine\command\Command;
-    use pocketmine\command\CommandSender;
+    use ps88\psarea\loaders\LoaderManager;
+    use pocketmine\command\commandsender;
     use pocketmine\Player;
     use pocketmine\Server;
-    use ps88\psarea\Loaders\Skyland\SkylandLoader;
-    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\loaders\skyland\SkylandLoader;
+
+    use ps88\psarea\translator\Translator;
 
     class SkylandGiveCommand extends Command {
 
-        /** @var PSAreaMain */
-        private $owner;
+
+
 
         /**
          * SkylandGiveCommand constructor.
          * @param string $name
-         * @param PSAreaMain $owner
+         *
          * @param string $description
          * @param string|null $usageMessage
          * @param array $aliases
          */
-        public function __construct(PSAreaMain $owner, string $name = "giveskyland", string $description = "Give Skyland to other Player", string $usageMessage = "/giveskyland [player] [id]", $aliases = ['Player', 'Id']) {
+        public function __construct( string $name = "giveskyland", string $description = "Give Skyland to other Player", string $usageMessage = "/giveskyland [player] [id]", $aliases = ['Player', 'Id']) {
             parent::__construct($name, $description, $usageMessage, $aliases);
-            $this->owner = $owner;
+
         }
 
         /**
@@ -36,12 +38,12 @@
          */
         public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
             if (!$sender instanceof Player) {
-                $sender->sendMessage(PSAreaMain::get("only-player"));
+                $sender->sendMessage(Translator::get("only-player"));
                 return \true;
             }
-            $a = (!isset($args[1])) ? $this->owner->skylandloader->getAreaByVector3($sender) : $this->owner->skylandloader->getAreaById($args[1]);
+            $a = (!isset($args[1])) ? LoaderManager::$skylandloader->getAreaByVector3($sender) : LoaderManager::$skylandloader->getAreaById($args[1]);
             if ($a == \null) {
-                $sender->sendMessage(PSAreaMain::get("not-registered"));
+                $sender->sendMessage(Translator::get("not-registered"));
                 return \true;
             }
             if (!isset($args[0])) {
@@ -50,15 +52,15 @@
             }
             $pl = Server::getInstance()->getPlayer($args[0]);
             if ($pl == \null) {
-                $sender->sendMessage(PSAreaMain::get("doesnt-exist"));
+                $sender->sendMessage(Translator::get("doesnt-exist"));
                 return \true;
             }
-            if (count($this->owner->skylandloader->getAreasByOwner($pl->getName())) >= SkylandLoader::Maximum_Lands) {
-                $sender->sendMessage(PSAreaMain::get("you-have-max", \true, ["@type", "skyland"]));
+            if (count(LoaderManager::$skylandloader->getAreasByOwner($pl->getName())) >= SkylandLoader::Maximum_Lands) {
+                $sender->sendMessage(Translator::get("you-have-max", \true, ["@type", "skyland"]));
                 return \true;
             }
             $a->setOwner($pl);
-            $sender->sendMessage(PSAreaMain::get("owner-changed"));
-            $pl->sendMessage(PSAreaMain::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()], ["@type", "field"]));
+            $sender->sendMessage(Translator::get("owner-changed"));
+            $pl->sendMessage(Translator::get("you-got", \true, ["@landnum", $a->getLandnum()], ["@player", $sender->getName()], ["@type", "field"]));
         }
     }

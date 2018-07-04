@@ -1,16 +1,23 @@
 <?php
-    namespace ps88\psarea\Loaders\Field;
+    namespace ps88\psarea\loaders\field;
 
-    use pocketmine\level\generator\Generator;
     use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
-    use pocketmine\plugin\PluginManager;
     use pocketmine\Server;
     use pocketmine\utils\Config;
-    use ps88\psarea\Generator\FieldGenerator;
-    use ps88\psarea\Loaders\base\BaseArea;
-    use ps88\psarea\Loaders\base\BaseLoader;
+    use ps88\psarea\commands\field\FieldAddShareCommand;
+    use ps88\psarea\commands\field\FieldBuyCommand;
+    use ps88\psarea\commands\field\FieldDelShareCommand;
+    use ps88\psarea\commands\field\FieldGiveCommand;
+    use ps88\psarea\commands\field\FieldInfoCommand;
+    use ps88\psarea\commands\field\FieldRegisteredList;
+    use ps88\psarea\commands\field\FieldWarpCommand;
+    use ps88\psarea\generator\FieldGenerator;
+    use ps88\psarea\loaders\base\BaseArea;
+    use ps88\psarea\loaders\base\BaseLoader;
+    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\translator\Translator;
 
     class FieldLoader extends BaseLoader {
         /** @var FieldArea[] */
@@ -100,6 +107,17 @@
         }
 
         public function loadLevel(): void {
+            $p = Server::getInstance()->getPluginManager()->getPlugin("PSArea");
+            if(! $p instanceof PSAreaMain) return;
+            Server::getInstance()->getCommandMap()->registerAll("PSArea", [
+                    new FieldRegisteredList( Translator::getCommands("field-registeredlist-name"), Translator::getCommands("field-registeredlist-description"), Translator::getCommands("field-registeredlist-usage"), Translator::getCommands("field-registeredlist-aliases")),
+                    new FieldAddShareCommand( Translator::getCommands("field-addshare-name"), Translator::getCommands("field-addshare-description"), Translator::getCommands("field-addshare-usage"), Translator::getCommands("field-addshare-aliases")),
+                    new FieldBuyCommand( Translator::getCommands("field-buy-name"), Translator::getCommands("field-buy-description"), Translator::getCommands("field-buy-usage"), Translator::getCommands("field-buy-aliases")),
+                    new FieldGiveCommand( Translator::getCommands("field-give-name"), Translator::getCommands("field-give-description"), Translator::getCommands("field-give-usage"), Translator::getCommands("field-give-aliases")),
+                    new FieldInfoCommand( Translator::getCommands("field-info-name"), Translator::getCommands("field-info-description"), Translator::getCommands("field-info-usage"), Translator::getCommands("field-info-aliases")),
+                    new FieldWarpCommand( Translator::getCommands("field-warp-name"), Translator::getCommands("field-warp-description"), Translator::getCommands("field-warp-usage"), Translator::getCommands("field-warp-aliases")),
+                    new FieldDelShareCommand( Translator::getCommands("field-delshare-name"), Translator::getCommands("field-delshare-description"), Translator::getCommands("field-delshare-usage"), Translator::getCommands("field-delshare-aliases"))
+            ]);
             GeneratorManager::addGenerator(FieldGenerator::class, "field");
             $g = GeneratorManager::getGenerator("field");
             if (!Server::getInstance()->loadLevel("field")) {

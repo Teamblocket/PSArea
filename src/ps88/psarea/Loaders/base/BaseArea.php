@@ -1,13 +1,17 @@
 <?php
-    namespace ps88\psarea\Loaders\base;
+    namespace ps88\psarea\loaders\base;
 
     use pocketmine\level\Position;
     use pocketmine\math\Vector2;
     use pocketmine\IPlayer;
     use pocketmine\Player;
     use pocketmine\Server;
-    use ps88\psarea\Events\LandAddShareEvent;
-    use ps88\psarea\Events\LandWarpEvent;
+    use pocketmine\utils\TextFormat;
+    use ps88\psarea\events\area\PSAreaAddShareEvent;
+    use ps88\psarea\events\area\PSAreaEnterEvent;
+    use ps88\psarea\events\area\PSAreaWarpEvent;
+    use ps88\psarea\manager\PlayerManager;
+    use ps88\psarea\translator\Translator;
 
     abstract class BaseArea {
         public const Island = 0;
@@ -30,8 +34,19 @@
         /** @var IPlayer[] */
         public $shares = [];
 
+        /** @var bool */
+        public $access = \true;
+
         /** @var int */
         private $landnum;
+
+        /** @var string */
+        private $welcomemessage = "";
+
+        /** @var string[] */
+        private $PlayingPlayers = [
+
+        ];
 
         /**
          * BaseArea constructor.
@@ -107,7 +122,7 @@
 
         public function addShare(IPlayer $pl): void {
             if ($this->getShare($pl->getName()) !== \null) return;
-            Server::getInstance()->getPluginManager()->callEvent($ev = new LandAddShareEvent($this, $pl));
+            Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaAddShareEvent($this, $pl));
             if ($ev->isCancelled()) return;
             array_push($this->shares, $pl);
         }
@@ -117,12 +132,12 @@
             for ($i = 0; $i >= count($this->getShares()); $i++) {
                 $share = $this->shares[$i];
                 if ($share->getName() == $pl->getName()) {
+                    Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaAddShareEvent($this, $pl));
+                    if ($ev->isCancelled()) return;
                     unset($this->shares[$i]);
                     return;
                 }
             }
-            //   Server::getInstance()->getPluginManager()->callEvent($ev = new LandAddShareEvent($this, $pl));
-            //   if ($ev->isCancelled()) return; TODO need to add LandDelShareEvent class
         }
 
         /**
@@ -135,9 +150,45 @@
         public function Warp(Player $pl): bool {
             $v = $this->getMinVector();
             $v2 = $this->getMaxVector();
-            Server::getInstance()->getPluginManager()->callEvent($ev = new LandWarpEvent($this, $pl));
+            Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaWarpEvent($this, $pl));
             if ($ev->isCancelled()) return \false;
             $pl->teleport(new Position(($v->x + $v2->x) / 2, 14, ($v->y + $v2->y) / 2, Server::getInstance()->getLevelByName('island')));
             return \true;
+        }
+
+        public function PlayerAccess(Player $player): void {
+            Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaEnterEvent($this, $player));
+            if (PlayerManager::$PlayingPlayers[$player->getName()][0] == self::LandType and PlayerManager::$PlayingPlayers[$player->getName()][1] == $this->getLandnum()) return;
+            if ($ev->isCancelled() or (!$this->access and ($this->getOwner()->getName() !== $player->getName() or $this->getShare($player->getName()) == \null))) { // Can't Access
+                $player->sendPopup(TextFormat::RED . Translator::get("cant-access", \false));
+                $player->teleport(Server::getInstance()->getDefaultLevel()->getSafeSpawn());
+                return;
+            } else { // Access!!
+                $type = $this->TypeAsString();
+                $msg = ($this->getOwner() == \null) ? Translator::get("welcome-to-type", \false, ["@type", $type], ["@landnum", $this->getLandnum()]) . "\n" . Translator::get("no-owner", \false, ["@type", $type], ["@landnum", $this->getLandnum()]) : $this->getWelcomeMessage();
+                $player->sendPopup($msg);
+            }
+        }
+
+        public function PlayerOuit(Player $player) {
+
+        }
+
+        protected function TypeAsString(): string {
+            return "Nothing";
+        }
+
+        /**
+         * @return string
+         */
+        public function getWelcomeMessage(): string {
+            return $this->welcomemessage;
+        }
+
+        /**
+         * @param string $welcomemessage
+         */
+        public function setWelcomeMessage(string $welcomemessage): void {
+            $this->welcomemessage = $welcomemessage;
         }
     }

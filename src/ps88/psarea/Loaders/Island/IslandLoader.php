@@ -1,15 +1,22 @@
 <?php
-    namespace ps88\psarea\Loaders\Island;
+    namespace ps88\psarea\loaders\island;
 
-    use pocketmine\level\generator\Generator;
     use pocketmine\level\generator\GeneratorManager;
     use pocketmine\math\Vector2;
     use pocketmine\math\Vector3;
     use pocketmine\Server;
     use pocketmine\utils\Config;
-    use ps88\psarea\Generator\IslandGenerator;
-    use ps88\psarea\Loaders\base\BaseArea;
-    use ps88\psarea\Loaders\base\BaseLoader;
+    use ps88\psarea\commands\island\IslandAddShareCommand;
+    use ps88\psarea\commands\island\IslandBuyCommand;
+    use ps88\psarea\commands\island\IslandDelShareCommand;
+    use ps88\psarea\commands\island\IslandGiveCommand;
+    use ps88\psarea\commands\island\IslandInfoCommand;
+    use ps88\psarea\commands\island\IslandWarpCommand;
+    use ps88\psarea\generator\IslandGenerator;
+    use ps88\psarea\loaders\base\BaseArea;
+    use ps88\psarea\loaders\base\BaseLoader;
+    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\translator\Translator;
 
     class IslandLoader extends BaseLoader {
         /** @var IslandArea[] */
@@ -88,6 +95,16 @@
         }
 
         public function loadLevel(): void {
+            $p = Server::getInstance()->getPluginManager()->getPlugin("PSArea");
+            if(! $p instanceof PSAreaMain) return;
+            Server::getInstance()->getCommandMap()->registerAll("PSArea", [
+            new IslandAddShareCommand( Translator::getCommands("island-addshare-name"), Translator::getCommands("island-addshare-description"), Translator::getCommands("island-addshare-usage"), Translator::getCommands("island-addshare-aliases")),
+                    new IslandBuyCommand( Translator::getCommands("island-buy-name"), Translator::getCommands("island-buy-description"), Translator::getCommands("island-buy-usage"), Translator::getCommands("island-buy-aliases")),
+                    new IslandGiveCommand( Translator::getCommands("island-give-name"), Translator::getCommands("island-give-description"), Translator::getCommands("island-give-usage"), Translator::getCommands("island-give-aliases")),
+                    new IslandInfoCommand( Translator::getCommands("island-info-name"), Translator::getCommands("island-info-description"), Translator::getCommands("island-info-usage"), Translator::getCommands("island-info-aliases")),
+                    new IslandWarpCommand( Translator::getCommands("island-warp-name"), Translator::getCommands("island-warp-description"), Translator::getCommands("island-warp-usage"), Translator::getCommands("island-warp-aliases")),
+                    new IslandDelShareCommand( Translator::getCommands("island-delshare-name"), Translator::getCommands("island-delshare-description"), Translator::getCommands("island-delshare-usage"), Translator::getCommands("island-delshare-aliases"))
+            ]);
             GeneratorManager::addGenerator(IslandGenerator::class, 'island');
             $g = GeneratorManager::getGenerator("island");
             if (!Server::getInstance()->loadLevel("island")) {

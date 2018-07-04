@@ -1,12 +1,10 @@
 <?php
-    namespace ps88\psarea\Loaders\base;
+    namespace ps88\psarea\loaders\base;
 
     use pocketmine\math\Vector3;
-    use pocketmine\plugin\Plugin;
     use pocketmine\plugin\PluginManager;
     use pocketmine\Server;
-    use ps88\psarea\Events\LandAddEvent;
-    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\events\area\PSAreaAddEvent;
 
     abstract class BaseLoader {
 
@@ -77,7 +75,7 @@
          */
         public function addArea(BaseArea $area): bool {
             if ($this->getAreaById($area->getLandnum()) !== \null) return \false;
-            Server::getInstance()->getPluginManager()->callEvent($ev = new LandAddEvent($area));
+            Server::getInstance()->getPluginManager()->callEvent($ev = new PSAreaAddEvent($area));
             if ($ev->isCancelled()) return \false;
             array_push($this->areas, $area);
             return \true;

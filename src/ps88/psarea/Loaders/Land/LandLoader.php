@@ -1,18 +1,25 @@
 <?php
-    namespace ps88\psarea\Loaders\Land;
+    namespace ps88\psarea\loaders\land;
 
-    use pocketmine\level\generator\Generator;
     use pocketmine\level\Level;
     use pocketmine\level\Position;
     use pocketmine\math\Vector2;
-    use pocketmine\math\Vector3;
     use pocketmine\Player;
     use pocketmine\Server;
     use pocketmine\utils\Config;
-    use ps88\psarea\Generator\FieldGenerator;
-    use ps88\psarea\Loaders\base\BaseArea;
-    use ps88\psarea\Loaders\base\BaseLoader;
-    use ps88\psarea\Loaders\Land\LandArea;
+    use ps88\psarea\commands\land\LandAddShareCommand;
+    use ps88\psarea\commands\land\LandBuyCommand;
+    use ps88\psarea\commands\land\LandDelShareCommand;
+    use ps88\psarea\commands\land\LandGiveCommand;
+    use ps88\psarea\commands\land\LandInfoCommand;
+    use ps88\psarea\commands\land\LandMakeCommand;
+    use ps88\psarea\commands\land\LandWarpCommand;
+    use ps88\psarea\listeners\LandListener;
+    use ps88\psarea\loaders\base\BaseArea;
+    use ps88\psarea\loaders\base\BaseLoader;
+    use ps88\psarea\loaders\land\LandArea;
+    use ps88\psarea\PSAreaMain;
+    use ps88\psarea\translator\Translator;
 
     class LandLoader extends BaseLoader {
         /** @var LandArea[] */
@@ -22,6 +29,13 @@
         public $register = [];
 
         public static $landcount = 0;
+
+        public function __construct(int $price) {
+            parent::__construct($price);
+            $p = Server::getInstance()->getPluginManager()->getPlugin("PSArea");
+            if (!$p instanceof PSAreaMain) return;
+            Server::getInstance()->getPluginManager()->registerEvents(new LandListener(), $p);
+        }
 
         /**
          * @param string $name
@@ -103,6 +117,17 @@
         }
 
         public function loadLevel(): void {
+            $p = Server::getInstance()->getPluginManager()->getPlugin("PSArea");
+            if(! $p instanceof PSAreaMain) return;
+            Server::getInstance()->getCommandMap()->registerAll("PSArea", [
+                    new LandAddShareCommand( Translator::getCommands("land-addshare-name"), Translator::getCommands("land-addshare-description"), Translator::getCommands("land-addshare-usage"), Translator::getCommands("land-addshare-aliases")),
+                    new LandBuyCommand( Translator::getCommands("land-buy-name"), Translator::getCommands("land-buy-description"), Translator::getCommands("land-buy-usage"), Translator::getCommands("land-buy-aliases")),
+                    new LandGiveCommand( Translator::getCommands("land-give-name"), Translator::getCommands("land-give-description"), Translator::getCommands("land-give-usage"), Translator::getCommands("land-give-aliases")),
+                    new LandInfoCommand( Translator::getCommands("land-info-name"), Translator::getCommands("land-info-description"), Translator::getCommands("land-info-usage"), Translator::getCommands("land-info-aliases")),
+                    new LandWarpCommand( Translator::getCommands("land-warp-name"), Translator::getCommands("land-warp-description"), Translator::getCommands("land-warp-usage"), Translator::getCommands("land-warp-aliases")),
+                    new LandDelShareCommand( Translator::getCommands("land-delshare-name"), Translator::getCommands("land-delshare-description"), Translator::getCommands("land-delshare-usage"), Translator::getCommands("land-delshare-aliases")),
+                    new LandMakeCommand( Translator::getCommands("land-make-name"), Translator::getCommands("land-make-description"), Translator::getCommands("land-make-usage"), Translator::getCommands("land-make-aliases"))
+            ]);
             @mkdir(Server::getInstance()->getDataPath() . "/" . "NormalLand");
             $c = new Config(Server::getInstance()->getDataPath() . "/" . "NormalLand" . "/" . "data.json", Config::JSON);
             foreach ($c->getAll() as $key => $value) {
