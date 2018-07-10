@@ -1,5 +1,5 @@
 Prefix: "[ PSArea ]"
-# Commands
+# commands
 commands-field-addshare-name: "addfieldshare"
 commands-field-addshare-description: "Add Field Shared Player"
 commands-field-addshare-usage: "/addfieldshare [player] [id]"
@@ -108,6 +108,10 @@ commands-protectworld-set-name: "setprotectworld"
 commands-protectworld-set-description: "Set protected world"
 commands-protectworld-set-usage: "/setprotectworld [level] [isProtect(default: true)]"
 commands-protectworld-set-aliases: ["level", "isProtect"]
+commands-set-wel-name: "setwelcomemessage"
+commands-set-wel-description: "Set Welcome Message"
+commands-set-wel-usage: "/setwelcomemessage [Welcome Message]"
+commands-set-wel-aliases: ["Welcome Message"]
 
 #Message
 # @type is Land Type(Island, Field, Skyland, Land)
@@ -140,3 +144,10 @@ message-cant-find-level: "Can't find any level"
 message-world-will-be-protected: "@level Level will be protected now"
 message-registered-first-vector2: "Registered First Vector2"
 message-registered-all: "Registered all"
+message-island: "island"
+message-skyland: "skyland"
+message-field: "field"
+message-land: "land"
+message-welcome-to-type: "Welcome to @type No.@landnum"
+message-no-owner: "Not sold. To buy @type, enter /buy@type"
+message-cant-access: "You can't access here"

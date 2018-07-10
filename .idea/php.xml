@@ -4,7 +4,7 @@
     <include_path>
       <path value="$PROJECT_DIR$/../StormServer" />
       <path value="$PROJECT_DIR$/../EconomyAPI" />
-      <path value="F:/pm" />
+      <path value="$PROJECT_DIR$/../PocketMine-MP" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
