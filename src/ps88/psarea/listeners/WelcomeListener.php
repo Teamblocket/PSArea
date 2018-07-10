@@ -7,7 +7,7 @@
     use pocketmine\level\Position;
     use pocketmine\Player;
     use ps88\psarea\loaders\LoaderManager;
-    use ps88\psarea\manager\PlayerManager;
+    use ps88\psarea\managers\PlayerManager;
 
     class WelcomeListener implements Listener {
 

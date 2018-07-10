@@ -10,7 +10,7 @@
     use ps88\psarea\events\area\PSAreaAddShareEvent;
     use ps88\psarea\events\area\PSAreaEnterEvent;
     use ps88\psarea\events\area\PSAreaWarpEvent;
-    use ps88\psarea\manager\PlayerManager;
+    use ps88\psarea\managers\PlayerManager;
     use ps88\psarea\translator\Translator;
 
     abstract class BaseArea {

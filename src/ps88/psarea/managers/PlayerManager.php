@@ -1,5 +1,5 @@
 <?php
-    namespace ps88\psarea\manager;
+    namespace ps88\psarea\managers;
 
     use pocketmine\Player;
     use ps88\psarea\loaders\base\BaseArea;
