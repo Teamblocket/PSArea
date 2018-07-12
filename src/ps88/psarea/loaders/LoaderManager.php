@@ -25,6 +25,9 @@
         /** @var ?SkylandLoader */
         public static $skylandloader = \null;
 
+        /** @var BaseLoader[] */
+        public static $loaders = [];
+
         public static function Load() {
             $prices = Setting::$setting->get("prices");
             if ($prices["field"] == -1) self::$fieldloader = new FieldLoader($prices["field"]);
@@ -39,6 +42,10 @@
                     self::$landloader
             ];
             foreach ($loaders as $item) {
+                if ($item == \null) continue;
+                $item->loadLevel();
+            }
+            foreach (self::$loaders as $type => $item) {
                 if ($item == \null) continue;
                 $item->loadLevel();
             }
@@ -72,7 +79,15 @@
                 case BaseArea::Land:
                     return self::getLandLoader();
             }
-            return \null;
+            return isset(self::$loaders[$type])? self::$loaders[$type] : \null;
+        }
+
+        /**
+         * @param BaseLoader $loader
+         * @param int $type
+         */
+        public static function registerLoader(BaseLoader $loader, int $type): void{
+            self::$loaders[$type] = $loader;
         }
 
         /**
@@ -88,8 +103,17 @@
                 case "field":
                     return self::getFieldloader()->getAreaByVector3($p);
                 default:
-                    return self::getLandLoader()->getAreaByPosition($p);
+                    foreach (self::$loaders as $type => $loader){
+                        if($loader instanceof LandLoader) {
+                            if (($a = $loader->getAreaByPosition($p)) !== \null) {
+                                return $a;
+                            }
+                        }elseif(($a = $loader->getAreaByVector3($p)) !== \null) {
+                            return $a;
+                        }
+                    }
             }
+            return self::getLandLoader()->getAreaByPosition($p);
         }
 
         public static function saveAll(): void {
@@ -103,6 +127,11 @@
             foreach ($loaders as $item) {
                 if ($item == \null) continue;
                 $item->saveAll();
+            }
+
+            foreach (self::$loaders as $type => $loader) {
+                if ($loader == \null) continue;
+                $loader->saveAll();
             }
         }
     }
